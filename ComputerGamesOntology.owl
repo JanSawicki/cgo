@@ -16,58 +16,7 @@
         <Class IRI="#Abbreviation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Action_RPG"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Adventure"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Anime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Artillery"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Auto_battler"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Battle_Royale"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Board"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Card"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Casual"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Competitive"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Construction_and_management_simulation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DC_Comics"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Developer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Disney"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FPS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fighting"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#First-person_party-based_RPG"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#First_person"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Game"/>
@@ -76,163 +25,10 @@
         <Class IRI="#Genre"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Grand_strategy_wargame"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Graphic_adventures"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Horror"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Interactive_movie"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lego"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Life_simulation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Logic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lord_of_the_Rings"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MMO"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MMORPG"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MOBA"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Marvel_Comics"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Massively_multiplayer_online"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Metroidvania"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Mobile"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Party"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Platform"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Programming"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Publisher"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#RPG"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RTS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RTT"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Racing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Real-time"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Real-time_strategy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Real-time_tactics"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Rhythm"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Roguelike"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Role-playing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sandbox"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Shooter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Simulation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sports-based_fighting"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sports_game"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Star_Wars"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Stealth"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Survival"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TBS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TBT"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TPS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tactical"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Text_adventures"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Third_parson"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tower_defense"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Trivia"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Turn-based_strategy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Turn-based_tactics"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Universe"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Vehicle_simulation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Visual_novels"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Wargame"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Beat&apos;em_up"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAbbreviation"/>
@@ -241,701 +37,70 @@
         <ObjectProperty IRI="#hasDeveloper"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasGenre"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasPublisher"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isAbbreviationOf"/>
+        <ObjectProperty IRI="#hasUniverse"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isDeveloperOf"/>
+        <NamedIndividual IRI="#Real-time_Strategy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isFromUniversum"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isInUniversum"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPublisherOf"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings:_The_Battle_for_Middle-earth_II"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="#FPS"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <ObjectIntersectionOf>
-                <Class IRI="#First_person"/>
-                <Class IRI="#Shooter"/>
-            </ObjectIntersectionOf>
-        </ObjectAllValuesFrom>
+        <Class IRI="#Game"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasDeveloper"/>
+                <Class IRI="#Developer"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasGenre"/>
+                <Class IRI="#Genre"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasPublisher"/>
+                <Class IRI="#Publisher"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasUniverse"/>
+                <Class IRI="#Universe"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Genre"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <ObjectIntersectionOf>
-                <Class IRI="#Massively_multiplayer_online"/>
-                <Class IRI="#Role-playing"/>
-            </ObjectIntersectionOf>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#MMO"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Massively_multiplayer_online"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#MMO"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Real-time_tactics"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#MMORPG"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <ObjectIntersectionOf>
-                <Class IRI="#Massively_multiplayer_online"/>
-                <Class IRI="#Role-playing"/>
-            </ObjectIntersectionOf>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#MOBA"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Multiplayer_online_battle_arena"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#RPG"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Role-playing"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#RTS"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Real-time_strategy"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#TBS"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Turn-based_strategy"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#TBT"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <Class IRI="#Turn-based_strategy"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#TPS"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isAbbreviationOf"/>
-            <ObjectIntersectionOf>
-                <Class IRI="#Shooter"/>
-                <Class IRI="#Third_parson"/>
-            </ObjectIntersectionOf>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="#Action_RPG"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Adventure"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Anime"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Artillery"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Auto_battler"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Battle_Royale"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Board"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Card"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Casual"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Competitive"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Construction_and_management_simulation"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DC_Comics"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Disney"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FPS"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Fighting"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#First-person_party-based_RPG"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#First_person"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Grand_strategy_wargame"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Graphic_adventures"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Horror"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Interactive_movie"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Lego"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Life_simulation"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Logic"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Lord_of_the_Rings"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MMO"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MMORPG"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MOBA"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Marvel_Comics"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Massively_multiplayer_online"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Metroidvania"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Mobile"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Party"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Programming"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RPG"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RTS"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RTT"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Racing"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Real-time"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Real-time_strategy"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Real-time_tactics"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Rhythm"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Roguelike"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Role-playing"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sandbox"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Shooter"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Simulation"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sports-based_fighting"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sports_game"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Star_Wars"/>
-        <Class IRI="#Universe"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stealth"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Survival"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TBS"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TBT"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TPS"/>
-        <Class IRI="#Abbreviation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Tactical"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Text_adventures"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Third_parson"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Tower_defense"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Trivia"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Turn-based_strategy"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Turn-based_tactics"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Vehicle_simulation"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Visual_novels"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wargame"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Beat&apos;em_up"/>
-        <Class IRI="#Genre"/>
-    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Abbreviation"/>
         <Class IRI="#Developer"/>
         <Class IRI="#Game"/>
-        <Class IRI="#Publisher"/>
-        <Class IRI="#Universe"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#Developer"/>
+        <Class IRI="#Genre"/>
         <Class IRI="#Publisher"/>
         <Class IRI="#Universe"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Abbreviation"/>
         <Class IRI="#Genre"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Universe"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#Universe"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Action_RPG"/>
-        <Class IRI="#Adventure"/>
-        <Class IRI="#Artillery"/>
-        <Class IRI="#Auto_battler"/>
-        <Class IRI="#Battle_Royale"/>
-        <Class IRI="#Board"/>
-        <Class IRI="#Card"/>
-        <Class IRI="#Casual"/>
-        <Class IRI="#Competitive"/>
-        <Class IRI="#Construction_and_management_simulation"/>
-        <Class IRI="#Fighting"/>
-        <Class IRI="#First-person_party-based_RPG"/>
-        <Class IRI="#First_person"/>
-        <Class IRI="#Grand_strategy_wargame"/>
-        <Class IRI="#Graphic_adventures"/>
-        <Class IRI="#Horror"/>
-        <Class IRI="#Interactive_movie"/>
-        <Class IRI="#Life_simulation"/>
-        <Class IRI="#Logic"/>
-        <Class IRI="#Massively_multiplayer_online"/>
-        <Class IRI="#Metroidvania"/>
-        <Class IRI="#Mobile"/>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-        <Class IRI="#Party"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Programming"/>
-        <Class IRI="#Racing"/>
-        <Class IRI="#Real-time"/>
-        <Class IRI="#Real-time_strategy"/>
-        <Class IRI="#Real-time_tactics"/>
-        <Class IRI="#Rhythm"/>
-        <Class IRI="#Roguelike"/>
-        <Class IRI="#Role-playing"/>
-        <Class IRI="#Sandbox"/>
-        <Class IRI="#Shooter"/>
-        <Class IRI="#Simulation"/>
-        <Class IRI="#Sports-based_fighting"/>
-        <Class IRI="#Sports_game"/>
-        <Class IRI="#Stealth"/>
-        <Class IRI="#Survival"/>
-        <Class IRI="#Tactical"/>
-        <Class IRI="#Text_adventures"/>
-        <Class IRI="#Third_parson"/>
-        <Class IRI="#Tower_defense"/>
-        <Class IRI="#Trivia"/>
-        <Class IRI="#Turn-based_strategy"/>
-        <Class IRI="#Turn-based_tactics"/>
-        <Class IRI="#Vehicle_simulation"/>
-        <Class IRI="#Visual_novels"/>
-        <Class IRI="#Wargame"/>
-        <Class IRI="#Beat&apos;em_up"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Action_RPG"/>
-        <Class IRI="#Adventure"/>
-        <Class IRI="#Artillery"/>
-        <Class IRI="#Auto_battler"/>
-        <Class IRI="#Battle_Royale"/>
-        <Class IRI="#Board"/>
-        <Class IRI="#Card"/>
-        <Class IRI="#Casual"/>
-        <Class IRI="#Competitive"/>
-        <Class IRI="#Construction_and_management_simulation"/>
-        <Class IRI="#Fighting"/>
-        <Class IRI="#First-person_party-based_RPG"/>
-        <Class IRI="#First_person"/>
-        <Class IRI="#Grand_strategy_wargame"/>
-        <Class IRI="#Graphic_adventures"/>
-        <Class IRI="#Interactive_movie"/>
-        <Class IRI="#Life_simulation"/>
-        <Class IRI="#Logic"/>
-        <Class IRI="#Massively_multiplayer_online"/>
-        <Class IRI="#Metroidvania"/>
-        <Class IRI="#Mobile"/>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-        <Class IRI="#Party"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Programming"/>
-        <Class IRI="#Racing"/>
-        <Class IRI="#Real-time"/>
-        <Class IRI="#Real-time_strategy"/>
-        <Class IRI="#Real-time_tactics"/>
-        <Class IRI="#Rhythm"/>
-        <Class IRI="#Roguelike"/>
-        <Class IRI="#Role-playing"/>
-        <Class IRI="#Sandbox"/>
-        <Class IRI="#Shooter"/>
-        <Class IRI="#Simulation"/>
-        <Class IRI="#Sports-based_fighting"/>
-        <Class IRI="#Sports_game"/>
-        <Class IRI="#Stealth"/>
-        <Class IRI="#Survival"/>
-        <Class IRI="#Tactical"/>
-        <Class IRI="#Text_adventures"/>
-        <Class IRI="#Third_parson"/>
-        <Class IRI="#Tower_defense"/>
-        <Class IRI="#Trivia"/>
-        <Class IRI="#Turn-based_strategy"/>
-        <Class IRI="#Turn-based_tactics"/>
-        <Class IRI="#Vehicle_simulation"/>
-        <Class IRI="#Visual_novels"/>
-        <Class IRI="#Wargame"/>
-        <Class IRI="#Beat&apos;em_up"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Action_RPG"/>
-        <Class IRI="#Artillery"/>
-        <Class IRI="#Auto_battler"/>
-        <Class IRI="#Battle_Royale"/>
-        <Class IRI="#Board"/>
-        <Class IRI="#Card"/>
-        <Class IRI="#Casual"/>
-        <Class IRI="#Competitive"/>
-        <Class IRI="#Construction_and_management_simulation"/>
-        <Class IRI="#Fighting"/>
-        <Class IRI="#First-person_party-based_RPG"/>
-        <Class IRI="#First_person"/>
-        <Class IRI="#Grand_strategy_wargame"/>
-        <Class IRI="#Graphic_adventures"/>
-        <Class IRI="#Interactive_movie"/>
-        <Class IRI="#Life_simulation"/>
-        <Class IRI="#Logic"/>
-        <Class IRI="#Massively_multiplayer_online"/>
-        <Class IRI="#Metroidvania"/>
-        <Class IRI="#Mobile"/>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-        <Class IRI="#Party"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Programming"/>
-        <Class IRI="#Racing"/>
-        <Class IRI="#Real-time"/>
-        <Class IRI="#Real-time_strategy"/>
-        <Class IRI="#Real-time_tactics"/>
-        <Class IRI="#Rhythm"/>
-        <Class IRI="#Roguelike"/>
-        <Class IRI="#Role-playing"/>
-        <Class IRI="#Sandbox"/>
-        <Class IRI="#Shooter"/>
-        <Class IRI="#Simulation"/>
-        <Class IRI="#Sports-based_fighting"/>
-        <Class IRI="#Sports_game"/>
-        <Class IRI="#Stealth"/>
-        <Class IRI="#Survival"/>
-        <Class IRI="#Tactical"/>
-        <Class IRI="#Text_adventures"/>
-        <Class IRI="#Third_parson"/>
-        <Class IRI="#Tower_defense"/>
-        <Class IRI="#Trivia"/>
-        <Class IRI="#Turn-based_strategy"/>
-        <Class IRI="#Turn-based_tactics"/>
-        <Class IRI="#Vehicle_simulation"/>
-        <Class IRI="#Visual_novels"/>
-        <Class IRI="#Wargame"/>
-        <Class IRI="#Beat&apos;em_up"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Action_RPG"/>
-        <Class IRI="#Artillery"/>
-        <Class IRI="#Auto_battler"/>
-        <Class IRI="#Battle_Royale"/>
-        <Class IRI="#Board"/>
-        <Class IRI="#Card"/>
-        <Class IRI="#Casual"/>
-        <Class IRI="#Competitive"/>
-        <Class IRI="#Construction_and_management_simulation"/>
-        <Class IRI="#Fighting"/>
-        <Class IRI="#First-person_party-based_RPG"/>
-        <Class IRI="#First_person"/>
-        <Class IRI="#Grand_strategy_wargame"/>
-        <Class IRI="#Graphic_adventures"/>
-        <Class IRI="#Interactive_movie"/>
-        <Class IRI="#Life_simulation"/>
-        <Class IRI="#Logic"/>
-        <Class IRI="#Massively_multiplayer_online"/>
-        <Class IRI="#Metroidvania"/>
-        <Class IRI="#Mobile"/>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-        <Class IRI="#Party"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Programming"/>
-        <Class IRI="#Racing"/>
-        <Class IRI="#Real-time"/>
-        <Class IRI="#Real-time_strategy"/>
-        <Class IRI="#Real-time_tactics"/>
-        <Class IRI="#Rhythm"/>
-        <Class IRI="#Roguelike"/>
-        <Class IRI="#Role-playing"/>
-        <Class IRI="#Sandbox"/>
-        <Class IRI="#Shooter"/>
-        <Class IRI="#Sports-based_fighting"/>
-        <Class IRI="#Sports_game"/>
-        <Class IRI="#Stealth"/>
-        <Class IRI="#Survival"/>
-        <Class IRI="#Tactical"/>
-        <Class IRI="#Text_adventures"/>
-        <Class IRI="#Third_parson"/>
-        <Class IRI="#Tower_defense"/>
-        <Class IRI="#Trivia"/>
-        <Class IRI="#Turn-based_strategy"/>
-        <Class IRI="#Turn-based_tactics"/>
-        <Class IRI="#Vehicle_simulation"/>
-        <Class IRI="#Visual_novels"/>
-        <Class IRI="#Wargame"/>
-        <Class IRI="#Beat&apos;em_up"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Action_RPG"/>
-        <Class IRI="#Artillery"/>
-        <Class IRI="#Auto_battler"/>
-        <Class IRI="#Battle_Royale"/>
-        <Class IRI="#Board"/>
-        <Class IRI="#Card"/>
-        <Class IRI="#Casual"/>
-        <Class IRI="#Competitive"/>
-        <Class IRI="#Construction_and_management_simulation"/>
-        <Class IRI="#Fighting"/>
-        <Class IRI="#First-person_party-based_RPG"/>
-        <Class IRI="#First_person"/>
-        <Class IRI="#Grand_strategy_wargame"/>
-        <Class IRI="#Graphic_adventures"/>
-        <Class IRI="#Interactive_movie"/>
-        <Class IRI="#Life_simulation"/>
-        <Class IRI="#Logic"/>
-        <Class IRI="#Massively_multiplayer_online"/>
-        <Class IRI="#Metroidvania"/>
-        <Class IRI="#Mobile"/>
-        <Class IRI="#Multiplayer_online_battle_arena"/>
-        <Class IRI="#Party"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Programming"/>
-        <Class IRI="#Racing"/>
-        <Class IRI="#Real-time"/>
-        <Class IRI="#Real-time_strategy"/>
-        <Class IRI="#Real-time_tactics"/>
-        <Class IRI="#Rhythm"/>
-        <Class IRI="#Roguelike"/>
-        <Class IRI="#Sandbox"/>
-        <Class IRI="#Shooter"/>
-        <Class IRI="#Sports-based_fighting"/>
-        <Class IRI="#Sports_game"/>
-        <Class IRI="#Stealth"/>
-        <Class IRI="#Survival"/>
-        <Class IRI="#Tactical"/>
-        <Class IRI="#Text_adventures"/>
-        <Class IRI="#Third_parson"/>
-        <Class IRI="#Tower_defense"/>
-        <Class IRI="#Trivia"/>
-        <Class IRI="#Turn-based_strategy"/>
-        <Class IRI="#Turn-based_tactics"/>
-        <Class IRI="#Vehicle_simulation"/>
-        <Class IRI="#Visual_novels"/>
-        <Class IRI="#Wargame"/>
-        <Class IRI="#Beat&apos;em_up"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Anime"/>
-        <Class IRI="#DC_Comics"/>
-        <Class IRI="#Disney"/>
-        <Class IRI="#Lego"/>
-        <Class IRI="#Lord_of_the_Rings"/>
-        <Class IRI="#Marvel_Comics"/>
-        <Class IRI="#Star_Wars"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Anime"/>
-        <Class IRI="#DC_Comics"/>
-        <Class IRI="#Lego"/>
-        <Class IRI="#Lord_of_the_Rings"/>
-        <Class IRI="#Marvel_Comics"/>
-        <Class IRI="#Star_Wars"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#FPS"/>
-        <Class IRI="#MMO"/>
-        <Class IRI="#MMORPG"/>
-        <Class IRI="#MOBA"/>
-        <Class IRI="#RPG"/>
-        <Class IRI="#RTS"/>
-        <Class IRI="#RTT"/>
-        <Class IRI="#TBS"/>
-        <Class IRI="#TBT"/>
-        <Class IRI="#TPS"/>
     </DisjointClasses>
     <DifferentIndividuals/>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings:_The_Battle_for_Middle-earth_II"/>
+        <NamedIndividual IRI="#Real-time_Strategy"/>
+    </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAbbreviation"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDeveloper"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGenre"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -943,58 +108,14 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isAbbreviationOf"/>
+        <ObjectProperty IRI="#hasUniverse"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isDeveloperOf"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isFromUniversum"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isInUniversum"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isPublisherOf"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasAbbreviation"/>
-        <ObjectProperty IRI="#isAbbreviationOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasDeveloper"/>
-        <ObjectProperty IRI="#isDeveloperOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <ObjectProperty IRI="#isPublisherOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isFromUniversum"/>
-        <ObjectProperty IRI="#isInUniversum"/>
-    </InverseObjectProperties>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasAbbreviation"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasDeveloper"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isAbbreviationOf"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isDeveloperOf"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isInUniversum"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isPublisherOf"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAbbreviation"/>
@@ -1005,28 +126,16 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPublisher"/>
-        <Class IRI="#Publisher"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isAbbreviationOf"/>
-        <Class IRI="#Abbreviation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isDeveloperOf"/>
-        <Class IRI="#Developer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isFromUniversum"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isInUniversum"/>
+        <ObjectProperty IRI="#hasUniverse"/>
         <Class IRI="#Game"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPublisherOf"/>
-        <Class IRI="#Publisher"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAbbreviation"/>
@@ -1037,28 +146,16 @@
         <Class IRI="#Developer"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPublisher"/>
-        <Class IRI="#Game"/>
+        <Class IRI="#Publisher"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isAbbreviationOf"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isDeveloperOf"/>
-        <Class IRI="#Game"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isFromUniversum"/>
+        <ObjectProperty IRI="#hasUniverse"/>
         <Class IRI="#Universe"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isInUniversum"/>
-        <Class IRI="#Universe"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPublisherOf"/>
-        <Class IRI="#Game"/>
     </ObjectPropertyRange>
 </Ontology>
 
