@@ -19,19 +19,16 @@
         <Class IRI="#ActionTime"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Actor"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Author"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Book"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Company"/>
+        <Class IRI="#Channel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Composer"/>
+        <Class IRI="#Company"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Country"/>
@@ -46,7 +43,13 @@
         <Class IRI="#Genre"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Language"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Lore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meme"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Movie"/>
@@ -55,10 +58,13 @@
         <Class IRI="#Name"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Person"/>
+        <Class IRI="#PieceOfArt"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PieceOfArt"/>
+        <Class IRI="#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Podcast"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Publisher"/>
@@ -74,6 +80,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SizeClassification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stream"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Universe"/>
@@ -94,13 +103,22 @@
         <ObjectProperty IRI="#hasGenre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasLanguage"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasLore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMovie"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPieceOfArt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlatform"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -136,6 +154,9 @@
         <ObjectProperty IRI="#isGenreOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isLanguageOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isLoreOf"/>
     </Declaration>
     <Declaration>
@@ -143,6 +164,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPieceOfArtOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlatformOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPublisherOf"/>
@@ -242,6 +266,10 @@
                 <Class IRI="#Genre"/>
             </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasPlatform"/>
+                <Class IRI="#Platform"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
                 <ObjectProperty IRI="#hasPublisher"/>
                 <Class IRI="#Publisher"/>
             </ObjectMinCardinality>
@@ -296,7 +324,7 @@
         <Class IRI="#PieceOfArt"/>
         <ObjectIntersectionOf>
             <Class IRI="#PieceOfArt"/>
-            <ObjectMinCardinality cardinality="1">
+            <ObjectMinCardinality cardinality="0">
                 <ObjectProperty IRI="#hasAuthor"/>
                 <Class IRI="#Author"/>
             </ObjectMinCardinality>
@@ -363,56 +391,45 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#Actor"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Book"/>
         <Class IRI="#PieceOfArt"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Composer"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#Channel"/>
+        <Class IRI="#PieceOfArt"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Developer"/>
         <Class IRI="#Company"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Meme"/>
+        <Class IRI="#PieceOfArt"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Movie"/>
+        <Class IRI="#PieceOfArt"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Podcast"/>
         <Class IRI="#PieceOfArt"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Publisher"/>
         <Class IRI="#Company"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stream"/>
+        <Class IRI="#PieceOfArt"/>
+    </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#ActionTime"/>
         <Class IRI="#Company"/>
-        <Class IRI="#Country"/>
-        <Class IRI="#Game"/>
-        <Class IRI="#Genre"/>
-        <Class IRI="#Name"/>
-        <Class IRI="#Rating"/>
-        <Class IRI="#SizeClassification"/>
-        <Class IRI="#Universe"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Actor"/>
-        <Class IRI="#Composer"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Book"/>
-        <Class IRI="#Movie"/>
+        <Class IRI="#Language"/>
+        <Class IRI="#Platform"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Company"/>
-        <Class IRI="#Person"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Company"/>
-        <Class IRI="#Series"/>
+        <Class IRI="#Platform"/>
     </DisjointClasses>
     <DifferentIndividuals/>
     <SubObjectPropertyOf>
@@ -436,7 +453,15 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLore"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMovie"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -445,6 +470,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPieceOfArt"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlatform"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -492,6 +521,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLanguageOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isLoreOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -501,6 +534,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isPieceOfArtOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPlatformOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -552,6 +589,10 @@
         <ObjectProperty IRI="#isGenreOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <ObjectProperty IRI="#isLanguageOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasLore"/>
         <ObjectProperty IRI="#isLoreOf"/>
     </InverseObjectProperties>
@@ -562,6 +603,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasPieceOfArt"/>
         <ObjectProperty IRI="#isPieceOfArtOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPlatform"/>
+        <ObjectProperty IRI="#isPlatformOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -630,6 +675,10 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasLore"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
@@ -640,6 +689,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPieceOfArt"/>
         <Class IRI="#Lore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlatform"/>
+        <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -686,6 +739,10 @@
         <Class IRI="#Genre"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLanguageOf"/>
+        <Class IRI="#Language"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLoreOf"/>
         <Class IRI="#Lore"/>
     </ObjectPropertyDomain>
@@ -696,6 +753,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPieceOfArtOf"/>
         <Class IRI="#PieceOfArt"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPlatformOf"/>
+        <Class IRI="#Platform"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPublisherOf"/>
@@ -746,6 +807,10 @@
         <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <Class IRI="#Language"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasLore"/>
         <Class IRI="#Lore"/>
     </ObjectPropertyRange>
@@ -756,6 +821,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPieceOfArt"/>
         <Class IRI="#PieceOfArt"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlatform"/>
+        <Class IRI="#Platform"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -802,6 +871,10 @@
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLanguageOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isLoreOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
@@ -812,6 +885,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPieceOfArtOf"/>
         <Class IRI="#Lore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlatformOf"/>
+        <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPublisherOf"/>
@@ -854,6 +931,11 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Game</IRI>
+        <Literal>A Game may have many Platforms (e.g. it can be distributed for computers and consoles).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Game</IRI>
         <Literal>A game can have multiple developers.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -870,6 +952,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Game</IRI>
         <Literal>A game may or may not have an abbreviation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PieceOfArt</IRI>
+        <Literal>Piece of art may not have an Author (e.g. Author is unknown).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
