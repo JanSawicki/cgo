@@ -16,6 +16,21 @@
         <Class IRI="#Abbreviation"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ActionTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Book"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Company"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Developer"/>
     </Declaration>
     <Declaration>
@@ -25,7 +40,31 @@
         <Class IRI="#Genre"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Lore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Movie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PieceOfArt"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Publisher"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Series"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SizeClassification"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Universe"/>
@@ -34,16 +73,85 @@
         <ObjectProperty IRI="#hasAbbreviation"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasActionTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAuthor"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasDeveloper"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasGenre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasLore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPieceOfArt"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasPublisher"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasRating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSeries"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSizeClassification"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasUniverse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isActionTimeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAuthorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDeveloperOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isGenreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLoreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isNameOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPieceOfArtOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPublisherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRatingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRatingSystemOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSeriesOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSizeClassificationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUniverseOf"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Real-time_Strategy"/>
@@ -52,9 +160,67 @@
         <NamedIndividual IRI="#The_Lord_of_the_Rings:_The_Battle_for_Middle-earth_II"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Abbreviation"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Abbreviation"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isAbbreviationOf"/>
+                <Class IRI="#Name"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ActionTime"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ActionTime"/>
+            <ObjectMinCardinality cardinality="0">
+                <ObjectProperty IRI="#isActionTimeOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Author"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Author"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isAuthorOf"/>
+                <Class IRI="#PieceOfArt"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Country"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Country"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasRatingSystem"/>
+                <Class IRI="#RatingSystem"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Developer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Company"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isDeveloperOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Game"/>
         <ObjectIntersectionOf>
             <Class IRI="#Game"/>
+            <ObjectMinCardinality cardinality="0">
+                <ObjectProperty IRI="#hasAbbreviation"/>
+                <Class IRI="#Abbreviation"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasActionTime"/>
+                <Class IRI="#ActionTime"/>
+            </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
                 <ObjectProperty IRI="#hasDeveloper"/>
                 <Class IRI="#Developer"/>
@@ -68,31 +234,169 @@
                 <Class IRI="#Publisher"/>
             </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasRating"/>
+                <Class IRI="#Rating"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasSizeClassification"/>
+                <Class IRI="#SizeClassification"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
                 <ObjectProperty IRI="#hasUniverse"/>
                 <Class IRI="#Universe"/>
             </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasName"/>
+                <Class IRI="#Name"/>
+            </ObjectExactCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Genre"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Genre"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isGenreOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Lore"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Lore"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasPieceOfArt"/>
+                <Class IRI="#PieceOfArt"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Name"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Name"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isNameOf"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PieceOfArt"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PieceOfArt"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasAuthor"/>
+                <Class IRI="#Author"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Publisher"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Company"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isPublisherOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Rating"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Rating"/>
+            <ObjectMinCardinality cardinality="0">
+                <ObjectProperty IRI="#isRatingOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RatingSystem"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#RatingSystem"/>
+            <ObjectMinCardinality cardinality="0">
+                <ObjectProperty IRI="#isRatingSystemOf"/>
+                <Class IRI="#Country"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Series"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Series"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#isSeriesOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SizeClassification"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SizeClassification"/>
+            <ObjectMinCardinality cardinality="0">
+                <ObjectProperty IRI="#isSizeClassificationOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Universe"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Universe"/>
+            <ObjectMinCardinality cardinality="0">
+                <ObjectProperty IRI="#isUniverseOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Book"/>
+        <Class IRI="#PieceOfArt"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Developer"/>
+        <Class IRI="#Company"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Movie"/>
+        <Class IRI="#PieceOfArt"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Publisher"/>
+        <Class IRI="#Company"/>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Abbreviation"/>
-        <Class IRI="#Developer"/>
+        <Class IRI="#ActionTime"/>
+        <Class IRI="#Company"/>
+        <Class IRI="#Country"/>
         <Class IRI="#Game"/>
         <Class IRI="#Genre"/>
-        <Class IRI="#Publisher"/>
+        <Class IRI="#Name"/>
+        <Class IRI="#Rating"/>
+        <Class IRI="#SizeClassification"/>
         <Class IRI="#Universe"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#Genre"/>
+        <Class IRI="#Book"/>
+        <Class IRI="#Movie"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Company"/>
+        <Class IRI="#Series"/>
     </DisjointClasses>
     <DifferentIndividuals/>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasGenre"/>
-        <NamedIndividual IRI="#The_Lord_of_the_Rings:_The_Battle_for_Middle-earth_II"/>
-        <NamedIndividual IRI="#Real-time_Strategy"/>
-    </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAbbreviation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActionTime"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAuthor"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -101,6 +405,18 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasGenre"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLore"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasName"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPieceOfArt"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -108,38 +424,260 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRating"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRatingSystem"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSeries"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSizeClassification"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasUniverse"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
-    <TransitiveObjectProperty>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isActionTimeOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAuthorOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isDeveloperOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLoreOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isNameOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPieceOfArtOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPublisherOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRatingOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRatingSystemOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSeriesOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSizeClassificationOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isUniverseOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasAbbreviation"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasActionTime"/>
+        <ObjectProperty IRI="#isActionTimeOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <ObjectProperty IRI="#isAuthorOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasDeveloper"/>
-    </TransitiveObjectProperty>
+        <ObjectProperty IRI="#isDeveloperOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasGenre"/>
+        <ObjectProperty IRI="#isGenreOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLore"/>
+        <ObjectProperty IRI="#isLoreOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasName"/>
+        <ObjectProperty IRI="#isNameOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPieceOfArt"/>
+        <ObjectProperty IRI="#isPieceOfArtOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPublisher"/>
+        <ObjectProperty IRI="#isPublisherOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasRating"/>
+        <ObjectProperty IRI="#isRatingOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasRatingSystem"/>
+        <ObjectProperty IRI="#isRatingSystemOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSeries"/>
+        <ObjectProperty IRI="#isSeriesOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSizeClassification"/>
+        <ObjectProperty IRI="#isSizeClassificationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasUniverse"/>
+        <ObjectProperty IRI="#isUniverseOf"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAbbreviation"/>
+        <Class IRI="#Name"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActionTime"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="#PieceOfArt"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDeveloper"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLore"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasName"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasDeveloper"/>
-        <Class IRI="#Game"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasGenre"/>
-        <Class IRI="#Game"/>
+        <ObjectProperty IRI="#hasPieceOfArt"/>
+        <Class IRI="#Lore"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPublisher"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRatingSystem"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSeries"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSizeClassification"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasUniverse"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+        <Class IRI="#Abbreviation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isActionTimeOf"/>
+        <Class IRI="#ActionTime"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAuthorOf"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDeveloperOf"/>
+        <Class IRI="#Developer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLoreOf"/>
+        <Class IRI="#Lore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isNameOf"/>
+        <Class IRI="#Name"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPieceOfArtOf"/>
+        <Class IRI="#PieceOfArt"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPublisherOf"/>
+        <Class IRI="#Publisher"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRatingOf"/>
+        <Class IRI="#Rating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRatingSystemOf"/>
+        <Class IRI="#RatingSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSeriesOf"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSizeClassificationOf"/>
+        <Class IRI="#SizeClassification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isUniverseOf"/>
+        <Class IRI="#Universe"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAbbreviation"/>
         <Class IRI="#Abbreviation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActionTime"/>
+        <Class IRI="#ActionTime"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="#Author"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDeveloper"/>
@@ -150,13 +688,147 @@
         <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLore"/>
+        <Class IRI="#Lore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasName"/>
+        <Class IRI="#Name"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPieceOfArt"/>
+        <Class IRI="#PieceOfArt"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPublisher"/>
         <Class IRI="#Publisher"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="#Rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRatingSystem"/>
+        <Class IRI="#RatingSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSeries"/>
+        <Class IRI="#Series"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSizeClassification"/>
+        <Class IRI="#SizeClassification"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasUniverse"/>
         <Class IRI="#Universe"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+        <Class IRI="#Name"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isActionTimeOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAuthorOf"/>
+        <Class IRI="#PieceOfArt"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDeveloperOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLoreOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isNameOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPieceOfArtOf"/>
+        <Class IRI="#Lore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPublisherOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRatingOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRatingSystemOf"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSeriesOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSizeClassificationOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isUniverseOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abbreviation</IRI>
+        <Literal>An abberviation has to be an abbreviation of something. Otherwise it does not exist.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActionTime</IRI>
+        <Literal>ActionTime can be attributed to both a game (directly) or to a particular game genre (indirectly).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Game</IRI>
+        <Literal>A game can have multiple developers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Game</IRI>
+        <Literal>A game has to have a distinct name.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Game</IRI>
+        <Literal>A game may have multiple Universes (cross-overs etc.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Game</IRI>
+        <Literal>A game may or may not have an abbreviation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PieceOfArt</IRI>
+        <Literal>PieceOfArt may have many authors (e.g. Movies)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rating</IRI>
+        <Literal>There may be no games that have a particular rating.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RatingSystem</IRI>
+        <Literal>A rating system does not have to be attributed to a country (it may be e.g. international).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasName</IRI>
+        <Literal>Two things cannot have one name.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
