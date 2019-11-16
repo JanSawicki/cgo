@@ -19,6 +19,9 @@
         <Class IRI="#ActionTime"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Author"/>
     </Declaration>
     <Declaration>
@@ -26,6 +29,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Company"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Composer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Country"/>
@@ -47,6 +53,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PieceOfArt"/>
@@ -143,6 +152,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isRatingSystemOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRelatedTo"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSeriesOf"/>
@@ -351,8 +363,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
+        <Class IRI="#Actor"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Book"/>
         <Class IRI="#PieceOfArt"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Composer"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Developer"/>
@@ -379,8 +399,16 @@
         <Class IRI="#Universe"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#Actor"/>
+        <Class IRI="#Composer"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Book"/>
         <Class IRI="#Movie"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Company"/>
+        <Class IRI="#Person"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Company"/>
@@ -488,6 +516,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRelatedTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isSeriesOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -555,6 +587,28 @@
         <ObjectProperty IRI="#hasUniverse"/>
         <ObjectProperty IRI="#isUniverseOf"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRelatedTo"/>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasAbbreviation"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasAbbreviation"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isAbbreviationOf"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </SymmetricObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </ReflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAbbreviation"/>
         <Class IRI="#Name"/>
@@ -654,6 +708,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRatingSystemOf"/>
         <Class IRI="#RatingSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRelatedTo"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSeriesOf"/>
@@ -766,6 +824,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isRatingSystemOf"/>
         <Class IRI="#Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRelatedTo"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isSeriesOf"/>
@@ -826,8 +888,33 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAbbreviation</IRI>
+        <Literal>The property hasAbbreviation is functional because any Name can have only one Abbreviation to avoid confusion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAbbreviation</IRI>
+        <Literal>The property hasAbbreviation is inverse functional because any Abbreviation can have only one Name to avoid confusion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasName</IRI>
         <Literal>Two things cannot have one name.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAbbreviationOf</IRI>
+        <Literal>The property isAbbreviationOf is functional because any Abbreviation can have only one Name to avoid confusion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAbbreviationOf</IRI>
+        <Literal>The property isAbbreviationOf is inverse functional because any Name can have only one Abbreviation to avoid confusion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isRelatedTo</IRI>
+        <Literal>The property isRealtedTo is not transitive to not cause a avalanche of relations between everything and everything.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
