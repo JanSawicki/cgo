@@ -19,16 +19,13 @@
         <Class IRI="#ActionTime"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdvancedLore"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ArtPiece"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Author"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Book"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Channel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Company"/>
@@ -40,6 +37,9 @@
         <Class IRI="#Developer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Director"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Distributor"/>
     </Declaration>
     <Declaration>
@@ -47,6 +47,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Influencer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Language"/>
@@ -82,9 +85,6 @@
         <Class IRI="#Platform"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Podcast"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Publisher"/>
     </Declaration>
     <Declaration>
@@ -94,16 +94,25 @@
         <Class IRI="#RatingSystem"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Resource"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Series"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleLore"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SizeClassification"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Stream"/>
+        <Class IRI="#SocialMediaChannel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SubCompany"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Text"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TimeSpan"/>
@@ -112,10 +121,16 @@
         <Class IRI="#Universe"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Writer"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasAbbreviation"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasActionTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasArtPiece"/>
@@ -124,7 +139,13 @@
         <ObjectProperty IRI="#hasAuthor"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasCountry"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDirector"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDistributor"/>
@@ -133,13 +154,13 @@
         <ObjectProperty IRI="#hasGenre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasInfuencer"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasLanguage"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasLore"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasMovie"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPlatform"/>
@@ -152,6 +173,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasRatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResource"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSeries"/>
@@ -169,10 +193,16 @@
         <ObjectProperty IRI="#hasUniverse"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasWriter"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isAbbreviationOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isActionTimeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isActorOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isArtPieceOf"/>
@@ -181,13 +211,22 @@
         <ObjectProperty IRI="#isAuthorOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isCountryOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isDeveloperOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDirectorOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isDistributorOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isGenreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInfluencerOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isLoreOf"/>
@@ -211,6 +250,9 @@
         <ObjectProperty IRI="#isRelatedTo"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isResourceOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isSequel"/>
     </Declaration>
     <Declaration>
@@ -229,7 +271,28 @@
         <ObjectProperty IRI="#isUniverseOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasName"/>
+        <ObjectProperty IRI="#isWriterOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requires"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiresOperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiresProcessor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiresRam"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiresVideoRam"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#runsInFramerate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#runsInResolution"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#wasFunded"/>
@@ -238,21 +301,54 @@
         <DataProperty IRI="#wasPublished"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="#Author"/>
+        <Class IRI="#Actor"/>
         <ObjectIntersectionOf>
             <Class IRI="#Person"/>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty IRI="#isAuthorOf"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isActorOf"/>
+                <Class IRI="#Movie"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AdvancedLore"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Lore"/>
+            <ObjectMinCardinality cardinality="5">
+                <ObjectProperty IRI="#hasArtPiece"/>
                 <Class IRI="#ArtPiece"/>
             </ObjectMinCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Company"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Company"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCountry"/>
+                <Class IRI="#Country"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Developer"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#isDeveloperOf"/>
-            <Class IRI="#Game"/>
-        </ObjectMinCardinality>
+        <ObjectIntersectionOf>
+            <Class IRI="#Company"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isDeveloperOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Director"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isDirectorOf"/>
+                <Class IRI="#Movie"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Distributor"/>
@@ -262,6 +358,30 @@
                 <ObjectProperty IRI="#isDistributorOf"/>
                 <Class IRI="#Game"/>
             </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Influencer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isInfluencerOf"/>
+                <Class IRI="#SocialMediaChannel"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Movie"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ArtPiece"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasActor"/>
+                <Class IRI="#Actor"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasDirector"/>
+                <Class IRI="#Director"/>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -315,6 +435,26 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#SimpleLore"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Lore"/>
+            <ObjectMaxCardinality cardinality="4">
+                <ObjectProperty IRI="#hasArtPiece"/>
+                <Class IRI="#ArtPiece"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SocialMediaChannel"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ArtPiece"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasInfuencer"/>
+                <Class IRI="#Influencer"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#SubCompany"/>
         <ObjectIntersectionOf>
             <Class IRI="#Company"/>
@@ -324,25 +464,49 @@
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Text"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ArtPiece"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasWriter"/>
+                <Class IRI="#Writer"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Writer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isWriterOf"/>
+                <Class IRI="#Text"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#Author"/>
+        <Class IRI="#Actor"/>
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Book"/>
-        <Class IRI="#ArtPiece"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Channel"/>
-        <Class IRI="#ArtPiece"/>
+        <Class IRI="#AdvancedLore"/>
+        <Class IRI="#Lore"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Developer"/>
         <Class IRI="#Company"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Director"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Distributor"/>
         <Class IRI="#Company"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Influencer"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Meme"/>
@@ -369,32 +533,83 @@
         <Class IRI="#Game"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Podcast"/>
-        <Class IRI="#ArtPiece"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Publisher"/>
         <Class IRI="#Company"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Stream"/>
+        <Class IRI="#SimpleLore"/>
+        <Class IRI="#Lore"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialMediaChannel"/>
         <Class IRI="#ArtPiece"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SubCompany"/>
         <Class IRI="#Company"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Text"/>
+        <Class IRI="#ArtPiece"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Writer"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Abbreviation"/>
+        <Class IRI="#ActionTime"/>
+        <Class IRI="#ArtPiece"/>
+        <Class IRI="#Company"/>
+        <Class IRI="#Country"/>
+        <Class IRI="#Game"/>
+        <Class IRI="#Genre"/>
+        <Class IRI="#Language"/>
+        <Class IRI="#Lore"/>
+        <Class IRI="#Name"/>
+        <Class IRI="#Person"/>
+        <Class IRI="#Platform"/>
+        <Class IRI="#Rating"/>
+        <Class IRI="#RatingSystem"/>
+        <Class IRI="#Resource"/>
+        <Class IRI="#Series"/>
+        <Class IRI="#SizeClassification"/>
+        <Class IRI="#TimeSpan"/>
+        <Class IRI="#Universe"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Actor"/>
+        <Class IRI="#Director"/>
+        <Class IRI="#Influencer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Actor"/>
+        <Class IRI="#Influencer"/>
+        <Class IRI="#Writer"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#NotDevelopedGame"/>
         <Class IRI="#NotPublishedGame"/>
     </DisjointClasses>
     <DifferentIndividuals/>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#isAuthorOf"/>
+        <ObjectProperty IRI="#isDirectorOf"/>
+    </EquivalentObjectProperties>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#isAuthorOf"/>
+        <ObjectProperty IRI="#isWriterOf"/>
+    </EquivalentObjectProperties>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAbbreviation"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasActionTime"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActor"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -406,7 +621,15 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCountry"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDeveloper"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDirector"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -418,15 +641,15 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInfuencer"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLanguage"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLore"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasMovie"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -443,6 +666,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRatingSystem"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasResource"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -466,11 +693,19 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasWriter"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isAbbreviationOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isActionTimeOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isActorOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -482,7 +717,15 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isDeveloperOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isDirectorOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -491,6 +734,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isGenreOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInfluencerOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -522,6 +769,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isResourceOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isSequel"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -545,6 +796,10 @@
         <ObjectProperty IRI="#isUniverseOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isWriterOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAbbreviation"/>
         <ObjectProperty IRI="#isAbbreviationOf"/>
@@ -552,6 +807,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasActionTime"/>
         <ObjectProperty IRI="#isActionTimeOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasActor"/>
+        <ObjectProperty IRI="#isActorOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasArtPiece"/>
@@ -562,8 +821,16 @@
         <ObjectProperty IRI="#isAuthorOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCountry"/>
+        <ObjectProperty IRI="#isCountryOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasDeveloper"/>
         <ObjectProperty IRI="#isDeveloperOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasDirector"/>
+        <ObjectProperty IRI="#isDirectorOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasDistributor"/>
@@ -572,6 +839,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasGenre"/>
         <ObjectProperty IRI="#isGenreOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasInfuencer"/>
+        <ObjectProperty IRI="#isInfluencerOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasLore"/>
@@ -594,6 +865,10 @@
         <ObjectProperty IRI="#isRatingSystemOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasResource"/>
+        <ObjectProperty IRI="#isResourceOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasSeries"/>
         <ObjectProperty IRI="#isSeriesOf"/>
     </InverseObjectProperties>
@@ -612,6 +887,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasUniverse"/>
         <ObjectProperty IRI="#isUniverseOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasWriter"/>
+        <ObjectProperty IRI="#isWriterOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isPrequel"/>
@@ -648,6 +927,10 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActor"/>
+        <Class IRI="#Movie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasArtPiece"/>
         <Class IRI="#Lore"/>
     </ObjectPropertyDomain>
@@ -659,8 +942,16 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCountry"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDeveloper"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDirector"/>
+        <Class IRI="#Movie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDistributor"/>
@@ -669,6 +960,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasGenre"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInfuencer"/>
+        <Class IRI="#SocialMediaChannel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasLanguage"/>
@@ -695,6 +990,10 @@
         <Class IRI="#Country"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResource"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSeries"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
@@ -715,6 +1014,13 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWriter"/>
+        <ObjectUnionOf>
+            <Class IRI="#Movie"/>
+            <Class IRI="#Text"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAbbreviationOf"/>
         <Class IRI="#Abbreviation"/>
     </ObjectPropertyDomain>
@@ -723,16 +1029,28 @@
         <Class IRI="#ActionTime"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isActorOf"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isArtPieceOf"/>
         <Class IRI="#ArtPiece"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAuthorOf"/>
-        <Class IRI="#Author"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <Class IRI="#Country"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isDeveloperOf"/>
         <Class IRI="#Company"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDirectorOf"/>
+        <Class IRI="#Director"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isDistributorOf"/>
@@ -741,6 +1059,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isGenreOf"/>
         <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInfluencerOf"/>
+        <Class IRI="#Influencer"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLoreOf"/>
@@ -771,6 +1093,10 @@
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isResourceOf"/>
+        <Class IRI="#Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSequel"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
@@ -794,6 +1120,10 @@
         <ObjectProperty IRI="#isUniverseOf"/>
         <Class IRI="#Universe"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isWriterOf"/>
+        <Class IRI="#Writer"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAbbreviation"/>
         <Class IRI="#Abbreviation"/>
@@ -803,16 +1133,24 @@
         <Class IRI="#ActionTime"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActor"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasArtPiece"/>
         <Class IRI="#ArtPiece"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <Class IRI="#Author"/>
+        <ObjectProperty IRI="#hasCountry"/>
+        <Class IRI="#Country"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDeveloper"/>
         <Class IRI="#Company"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDirector"/>
+        <Class IRI="#Director"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDistributor"/>
@@ -821,6 +1159,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGenre"/>
         <Class IRI="#Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInfuencer"/>
+        <Class IRI="#Influencer"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasLanguage"/>
@@ -847,6 +1189,10 @@
         <Class IRI="#RatingSystem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResource"/>
+        <Class IRI="#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSeries"/>
         <Class IRI="#Series"/>
     </ObjectPropertyRange>
@@ -867,12 +1213,20 @@
         <Class IRI="#Universe"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWriter"/>
+        <Class IRI="#Writer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isAbbreviationOf"/>
         <Class IRI="#Name"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isActionTimeOf"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isActorOf"/>
+        <Class IRI="#Movie"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isArtPieceOf"/>
@@ -886,8 +1240,16 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isDeveloperOf"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDirectorOf"/>
+        <Class IRI="#Movie"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isDistributorOf"/>
@@ -896,6 +1258,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isGenreOf"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInfluencerOf"/>
+        <Class IRI="#SocialMediaChannel"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isLoreOf"/>
@@ -926,6 +1292,10 @@
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isResourceOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isSequel"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
@@ -949,8 +1319,39 @@
         <ObjectProperty IRI="#isUniverseOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isWriterOf"/>
+        <ObjectUnionOf>
+            <Class IRI="#Movie"/>
+            <Class IRI="#Text"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
     <SubDataPropertyOf>
-        <DataProperty IRI="#hasName"/>
+        <DataProperty IRI="#requires"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requiresOperatingSystem"/>
+        <DataProperty IRI="#requires"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requiresProcessor"/>
+        <DataProperty IRI="#requires"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requiresRam"/>
+        <DataProperty IRI="#requires"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requiresVideoRam"/>
+        <DataProperty IRI="#requires"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#runsInFramerate"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#runsInResolution"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -962,8 +1363,28 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasName"/>
-        <Class abbreviatedIRI="owl:Thing"/>
+        <DataProperty IRI="#requiresOperatingSystem"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiresProcessor"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiresRam"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiresVideoRam"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#runsInFramerate"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#runsInResolution"/>
+        <Class IRI="#Game"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#wasFunded"/>
@@ -974,7 +1395,27 @@
         <Class IRI="#Game"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#hasName"/>
+        <DataProperty IRI="#requiresOperatingSystem"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiresProcessor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiresRam"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiresVideoRam"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#runsInFramerate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#runsInResolution"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1002,6 +1443,21 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <IRI>#Person</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal>A person that stars in movies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AdvancedLore</IRI>
+        <Literal>A subjective definition of lore that is advanced.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ArtPiece</IRI>
         <Literal>A piece of art that may somehow be related to a game.</Literal>
     </AnnotationAssertion>
@@ -1017,16 +1473,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Author</IRI>
-        <Literal>A person that is a creator of a piece of art.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Author</IRI>
-        <Literal>Author may be the author of many pieces of art.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Company</IRI>
         <Literal>A company related to games.</Literal>
     </AnnotationAssertion>
@@ -1039,6 +1485,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Developer</IRI>
         <Literal>A company that is creating (developing) games.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Director</IRI>
+        <IRI>#Person</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Director</IRI>
+        <Literal>A person who directs movies.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1100,6 +1556,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Influencer</IRI>
+        <IRI>#Person</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Influencer</IRI>
+        <Literal>A person using some social media channel to provide content for their followers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Language</IRI>
         <Literal>A languge that a game is provided in.</Literal>
     </AnnotationAssertion>
@@ -1107,6 +1573,36 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Lore</IRI>
         <Literal>A backstory created around a fictional world.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Meme</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Meme</IRI>
+        <Literal>A meme has no creator nor author. It is a common wealth.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Meme</IRI>
+        <Literal>An element of a culture passed from one individual to another with digial means.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Movie</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Movie</IRI>
+        <Literal>A movie (may also mean e.g. a short film, a cartoon, a TV series).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Movie</IRI>
+        <Literal>A movie can also be understood as its script (text).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1160,6 +1656,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Resource</IRI>
+        <Literal>A resource or database with information about a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Resource</IRI>
+        <Literal>e.g. internet forum, website, encyclopedia.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Series</IRI>
         <Literal>A game series consisting of at least two games which are strongly related to each other.</Literal>
     </AnnotationAssertion>
@@ -1170,8 +1676,28 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SimpleLore</IRI>
+        <Literal>A subjective definition of lore that is simple.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SizeClassification</IRI>
         <Literal>The classification of game size.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SocialMediaChannel</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SocialMediaChannel</IRI>
+        <Literal>A portal for conveying information to massive audiences (usually via the Internet).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SocialMediaChannel</IRI>
+        <Literal>e.g. Twitch, YouTube, Instagram, Facebook</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1180,8 +1706,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Text</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Text</IRI>
+        <Literal>A text.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Text</IRI>
+        <Literal>e.g. a book or a poem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TimeSpan</IRI>
-        <Literal>A subjective name given to a real time period.</Literal>
+        <Literal>A subjective name given to a real time period when a game was created.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1200,6 +1741,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Writer</IRI>
+        <IRI>#Person</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Writer</IRI>
+        <Literal>A person that writes texts.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasAbbreviation</IRI>
         <Literal>The property hasAbbreviation is functional because any Name can have only one Abbreviation to avoid confusion.</Literal>
     </AnnotationAssertion>
@@ -1207,11 +1758,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasAbbreviation</IRI>
         <Literal>The property hasAbbreviation is inverse functional because any Abbreviation can have only one Name to avoid confusion.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasName</IRI>
-        <Literal>A relation between a thing and its name.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1232,6 +1778,41 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isRelatedTo</IRI>
         <Literal>The property isRealtedTo is not transitive to not cause a avalanche of relations between everything and everything.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiresOperatingSystem</IRI>
+        <Literal>Describes operating system requirement of a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiresProcessor</IRI>
+        <Literal>Describes minimal processor requirement of a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiresRam</IRI>
+        <Literal>Describes minimal RAM requirement of a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiresRam</IRI>
+        <Literal>The requirement is given as string instead of number, because it needs the unit (and gigabytes are not default for all games)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiresVideoRam</IRI>
+        <Literal>Describes minimal video RAM requirement of a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#runsInFramerate</IRI>
+        <Literal>Describes the maximal framerate of a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#runsInResolution</IRI>
+        <Literal>Describes the maximal screen resolution of a game.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
