@@ -1577,11 +1577,6 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Meme</IRI>
-        <IRI>#ArtPiece</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Meme</IRI>
         <Literal>A meme has no creator nor author. It is a common wealth.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1590,8 +1585,8 @@
         <Literal>An element of a culture passed from one individual to another with digial means.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Movie</IRI>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Meme</IRI>
         <IRI>#ArtPiece</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1603,6 +1598,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Movie</IRI>
         <Literal>A movie can also be understood as its script (text).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Movie</IRI>
+        <IRI>#ArtPiece</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1628,6 +1628,24 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#NameWithAbbreviation</IRI>
         <Literal>A name that has an abbreviation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NotDevelopedGame</IRI>
+        <Literal>A game that has not been developed. 
+Either has not been developed or not yet been developed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NotDistributesGame</IRI>
+        <Literal>A game that has not been distributed. 
+Either has not been distributed or not yet been distributed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NotPublishedGame</IRI>
+        <Literal>A game that has not been published. 
+Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1687,11 +1705,6 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SocialMediaChannel</IRI>
-        <IRI>#ArtPiece</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SocialMediaChannel</IRI>
         <Literal>A portal for conveying information to massive audiences (usually via the Internet).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1700,14 +1713,14 @@
         <Literal>e.g. Twitch, YouTube, Instagram, Facebook</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SubCompany</IRI>
-        <Literal>A company belonging to another company.</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#SocialMediaChannel</IRI>
+        <IRI>#ArtPiece</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Text</IRI>
-        <IRI>#ArtPiece</IRI>
+        <IRI>#SubCompany</IRI>
+        <Literal>A company belonging to another company.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1718,6 +1731,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Text</IRI>
         <Literal>e.g. a book or a poem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Text</IRI>
+        <IRI>#ArtPiece</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
