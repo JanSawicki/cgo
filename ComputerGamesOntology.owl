@@ -28,6 +28,15 @@
         <Class IRI="#ArtPiece"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AudioDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CPU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Client"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Company"/>
     </Declaration>
     <Declaration>
@@ -43,13 +52,25 @@
         <Class IRI="#Distributor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Driver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPU"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Game"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Genre"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Hardware"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Influencer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InputDevice"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Language"/>
@@ -79,10 +100,19 @@
         <Class IRI="#NotPublishedGame"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OutputDevice"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Person"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Processor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Producer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Publisher"/>
@@ -109,6 +139,9 @@
         <Class IRI="#SocialMediaChannel"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Software"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SubCompany"/>
     </Declaration>
     <Declaration>
@@ -119,6 +152,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Universe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoCard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoDevice"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Writer"/>
@@ -164,6 +203,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPlatform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProducer"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -238,6 +280,9 @@
         <ObjectProperty IRI="#isPrequel"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isProducerOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPublisherOf"/>
     </Declaration>
     <Declaration>
@@ -248,6 +293,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isRelatedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRequiredFor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isResourceOf"/>
@@ -274,13 +322,7 @@
         <ObjectProperty IRI="#isWriterOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#requires"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#requiresOperatingSystem"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#requiresProcessor"/>
+        <ObjectProperty IRI="#requires"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#requiresRam"/>
@@ -425,6 +467,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Producer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Company"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isProducerOf"/>
+                <Class IRI="#Game"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Publisher"/>
         <ObjectIntersectionOf>
             <Class IRI="#Company"/>
@@ -493,6 +545,22 @@
         <Class IRI="#Lore"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AudioDevice"/>
+        <Class IRI="#InputDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioDevice"/>
+        <Class IRI="#OutputDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Client"/>
+        <Class IRI="#Software"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Developer"/>
         <Class IRI="#Company"/>
     </SubClassOf>
@@ -505,8 +573,20 @@
         <Class IRI="#Company"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Driver"/>
+        <Class IRI="#Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPU"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Influencer"/>
         <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InputDevice"/>
+        <Class IRI="#Hardware"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Meme"/>
@@ -533,6 +613,18 @@
         <Class IRI="#Game"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OutputDevice"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Processor"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Producer"/>
+        <Class IRI="#Company"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Publisher"/>
         <Class IRI="#Company"/>
     </SubClassOf>
@@ -551,6 +643,14 @@
     <SubClassOf>
         <Class IRI="#Text"/>
         <Class IRI="#ArtPiece"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoCard"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoDevice"/>
+        <Class IRI="#InputDevice"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Writer"/>
@@ -574,6 +674,28 @@
         <Class IRI="#Resource"/>
         <Class IRI="#Series"/>
         <Class IRI="#SizeClassification"/>
+        <Class IRI="#TimeSpan"/>
+        <Class IRI="#Universe"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Abbreviation"/>
+        <Class IRI="#ActionTime"/>
+        <Class IRI="#ArtPiece"/>
+        <Class IRI="#Country"/>
+        <Class IRI="#Game"/>
+        <Class IRI="#Genre"/>
+        <Class IRI="#Hardware"/>
+        <Class IRI="#Language"/>
+        <Class IRI="#Lore"/>
+        <Class IRI="#Name"/>
+        <Class IRI="#Person"/>
+        <Class IRI="#Platform"/>
+        <Class IRI="#Rating"/>
+        <Class IRI="#RatingSystem"/>
+        <Class IRI="#Resource"/>
+        <Class IRI="#Series"/>
+        <Class IRI="#SizeClassification"/>
+        <Class IRI="#Software"/>
         <Class IRI="#TimeSpan"/>
         <Class IRI="#Universe"/>
     </DisjointClasses>
@@ -657,6 +779,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProducer"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPublisher"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -753,6 +879,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducerOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isPublisherOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -766,6 +896,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isRelatedTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRequiredFor"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -798,6 +932,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isWriterOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#requires"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
@@ -851,6 +989,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasPlatform"/>
         <ObjectProperty IRI="#isPlatformOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProducer"/>
+        <ObjectProperty IRI="#isProducerOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -913,7 +1055,13 @@
         <ObjectProperty IRI="#isPrequel"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isRequiredFor"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#isSequel"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#requires"/>
     </TransitiveObjectProperty>
     <ReflexiveObjectProperty>
         <ObjectProperty IRI="#isRelatedTo"/>
@@ -976,6 +1124,14 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPlatform"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProducer"/>
+        <ObjectUnionOf>
+            <Class IRI="#Game"/>
+            <Class IRI="#Hardware"/>
+            <Class IRI="#Software"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -1077,6 +1233,10 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProducerOf"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPublisherOf"/>
         <Class IRI="#Publisher"/>
     </ObjectPropertyDomain>
@@ -1091,6 +1251,13 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRelatedTo"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRequiredFor"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hardware"/>
+            <Class IRI="#Software"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isResourceOf"/>
@@ -1123,6 +1290,14 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isWriterOf"/>
         <Class IRI="#Writer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requires"/>
+        <ObjectUnionOf>
+            <Class IRI="#Game"/>
+            <Class IRI="#Hardware"/>
+            <Class IRI="#Software"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAbbreviation"/>
@@ -1175,6 +1350,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPlatform"/>
         <Class IRI="#Platform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProducer"/>
+        <Class IRI="#Company"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPublisher"/>
@@ -1276,6 +1455,14 @@
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProducerOf"/>
+        <ObjectUnionOf>
+            <Class IRI="#Game"/>
+            <Class IRI="#Hardware"/>
+            <Class IRI="#Software"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isPublisherOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
@@ -1290,6 +1477,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isRelatedTo"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRequiredFor"/>
+        <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isResourceOf"/>
@@ -1326,25 +1517,20 @@
             <Class IRI="#Text"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requires"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hardware"/>
+            <Class IRI="#Software"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
     <SubDataPropertyOf>
-        <DataProperty IRI="#requires"/>
+        <DataProperty IRI="#requiresRam"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#requiresOperatingSystem"/>
-        <DataProperty IRI="#requires"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#requiresProcessor"/>
-        <DataProperty IRI="#requires"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#requiresRam"/>
-        <DataProperty IRI="#requires"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
         <DataProperty IRI="#requiresVideoRam"/>
-        <DataProperty IRI="#requires"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#runsInFramerate"/>
@@ -1362,14 +1548,6 @@
         <DataProperty IRI="#wasPublished"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
-    <DataPropertyDomain>
-        <DataProperty IRI="#requiresOperatingSystem"/>
-        <Class IRI="#Game"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#requiresProcessor"/>
-        <Class IRI="#Game"/>
-    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#requiresRam"/>
         <Class IRI="#Game"/>
@@ -1394,14 +1572,6 @@
         <DataProperty IRI="#wasPublished"/>
         <Class IRI="#Game"/>
     </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#requiresOperatingSystem"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#requiresProcessor"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#requiresRam"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -1473,6 +1643,36 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AudioDevice</IRI>
+        <Literal>A device outputing audio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AudioDevice</IRI>
+        <Literal>E.g. headphones, speakers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CPU</IRI>
+        <Literal>A central processing unit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Client</IRI>
+        <Literal>A client used to run a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Client</IRI>
+        <Literal>E.g. Steam, Uplay.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Company</IRI>
+        <Literal>A Company may be related (exist) in many countries.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Company</IRI>
         <Literal>A company related to games.</Literal>
     </AnnotationAssertion>
@@ -1503,8 +1703,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Driver</IRI>
+        <Literal>A computer driver.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GPU</IRI>
+        <Literal>A graphics processing unit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Game</IRI>
         <Literal>A Game may have many Platforms (e.g. it can be distributed for computers and consoles).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Game</IRI>
+        <Literal>A Game should be treated as a title, not a computer program.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1556,6 +1771,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hardware</IRI>
+        <Literal>A physical device.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hardware</IRI>
+        <Literal>None of the Hardware subclasses are disjoined because there exists integrated device that are, for example, both input and output.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Influencer</IRI>
         <IRI>#Person</IRI>
     </AnnotationAssertion>
@@ -1563,6 +1788,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Influencer</IRI>
         <Literal>A person using some social media channel to provide content for their followers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InputDevice</IRI>
+        <Literal>A hardware device which inputs some information.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1649,6 +1879,11 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OutputDevice</IRI>
+        <Literal>A hardware devices which outputs some information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Person</IRI>
         <Literal>A single real person.</Literal>
     </AnnotationAssertion>
@@ -1656,6 +1891,11 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Platform</IRI>
         <Literal>A platform on which the game may be played.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Processor</IRI>
+        <Literal>A computer processor.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1719,6 +1959,21 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Software</IRI>
+        <Literal>A computer programs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Software</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Software</IRI>
+        <Literal>A Game is not a software.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SubCompany</IRI>
         <Literal>A company belonging to another company.</Literal>
     </AnnotationAssertion>
@@ -1759,6 +2014,21 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VideoCard</IRI>
+        <Literal>A video card.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VideoDevice</IRI>
+        <Literal>A device outputing video.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VideoDevice</IRI>
+        <Literal>E.g. monitor, TV screen.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Writer</IRI>
         <IRI>#Person</IRI>
     </AnnotationAssertion>
@@ -1796,16 +2066,6 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isRelatedTo</IRI>
         <Literal>The property isRealtedTo is not transitive to not cause a avalanche of relations between everything and everything.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#requiresOperatingSystem</IRI>
-        <Literal>Describes operating system requirement of a game.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#requiresProcessor</IRI>
-        <Literal>Describes minimal processor requirement of a game.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
