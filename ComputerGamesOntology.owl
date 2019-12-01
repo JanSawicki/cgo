@@ -40,6 +40,12 @@
         <Class IRI="#Company"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Console"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Country"/>
     </Declaration>
     <Declaration>
@@ -127,9 +133,6 @@
         <Class IRI="#Resource"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Series"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#SimpleLore"/>
     </Declaration>
     <Declaration>
@@ -149,6 +152,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#TimeSpan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnfinishedGame"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Universe"/>
@@ -218,9 +224,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasResource"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSeries"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSizeClassification"/>
@@ -304,9 +307,6 @@
         <ObjectProperty IRI="#isSequel"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isSeriesOf"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isSizeClassificationOf"/>
     </Declaration>
     <Declaration>
@@ -325,6 +325,21 @@
         <ObjectProperty IRI="#requires"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hadLastChangeOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hadSupportCancelled"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#happened"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasReason"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requires"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#requiresRam"/>
     </Declaration>
     <Declaration>
@@ -335,6 +350,12 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#runsInResolution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wasAnnouncedOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wasCancelledOn"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#wasFunded"/>
@@ -360,16 +381,6 @@
                 <ObjectProperty IRI="#hasArtPiece"/>
                 <Class IRI="#ArtPiece"/>
             </ObjectMinCardinality>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Company"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Company"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasCountry"/>
-                <Class IRI="#Country"/>
-            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -561,6 +572,14 @@
         <Class IRI="#Software"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Computer"/>
+        <Class IRI="#Platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Console"/>
+        <Class IRI="#Platform"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Developer"/>
         <Class IRI="#Company"/>
     </SubClassOf>
@@ -602,18 +621,22 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NotDevelopedGame"/>
-        <Class IRI="#Game"/>
+        <Class IRI="#UnfinishedGame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NotDistributesGame"/>
-        <Class IRI="#Game"/>
+        <Class IRI="#UnfinishedGame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NotPublishedGame"/>
-        <Class IRI="#Game"/>
+        <Class IRI="#UnfinishedGame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OutputDevice"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Platform"/>
         <Class IRI="#Hardware"/>
     </SubClassOf>
     <SubClassOf>
@@ -645,6 +668,10 @@
         <Class IRI="#ArtPiece"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#UnfinishedGame"/>
+        <Class IRI="#Game"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VideoCard"/>
         <Class IRI="#Hardware"/>
     </SubClassOf>
@@ -653,52 +680,13 @@
         <Class IRI="#InputDevice"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#VideoDevice"/>
+        <Class IRI="#OutputDevice"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Writer"/>
         <Class IRI="#Person"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#ActionTime"/>
-        <Class IRI="#ArtPiece"/>
-        <Class IRI="#Company"/>
-        <Class IRI="#Country"/>
-        <Class IRI="#Game"/>
-        <Class IRI="#Genre"/>
-        <Class IRI="#Language"/>
-        <Class IRI="#Lore"/>
-        <Class IRI="#Name"/>
-        <Class IRI="#Person"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Rating"/>
-        <Class IRI="#RatingSystem"/>
-        <Class IRI="#Resource"/>
-        <Class IRI="#Series"/>
-        <Class IRI="#SizeClassification"/>
-        <Class IRI="#TimeSpan"/>
-        <Class IRI="#Universe"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Abbreviation"/>
-        <Class IRI="#ActionTime"/>
-        <Class IRI="#ArtPiece"/>
-        <Class IRI="#Country"/>
-        <Class IRI="#Game"/>
-        <Class IRI="#Genre"/>
-        <Class IRI="#Hardware"/>
-        <Class IRI="#Language"/>
-        <Class IRI="#Lore"/>
-        <Class IRI="#Name"/>
-        <Class IRI="#Person"/>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Rating"/>
-        <Class IRI="#RatingSystem"/>
-        <Class IRI="#Resource"/>
-        <Class IRI="#Series"/>
-        <Class IRI="#SizeClassification"/>
-        <Class IRI="#Software"/>
-        <Class IRI="#TimeSpan"/>
-        <Class IRI="#Universe"/>
-    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Actor"/>
         <Class IRI="#Director"/>
@@ -709,11 +697,11 @@
         <Class IRI="#Influencer"/>
         <Class IRI="#Writer"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#NotDevelopedGame"/>
-        <Class IRI="#NotPublishedGame"/>
-    </DisjointClasses>
     <DifferentIndividuals/>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#hasPlatform"/>
+        <ObjectProperty IRI="#requires"/>
+    </EquivalentObjectProperties>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="#isAuthorOf"/>
         <ObjectProperty IRI="#isDirectorOf"/>
@@ -796,10 +784,6 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasResource"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSeries"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -911,10 +895,6 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isSeriesOf"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isSizeClassificationOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -1009,10 +989,6 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasResource"/>
         <ObjectProperty IRI="#isResourceOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasSeries"/>
-        <ObjectProperty IRI="#isSeriesOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasSizeClassification"/>
@@ -1150,10 +1126,6 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSeries"/>
-        <Class IRI="#Game"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSizeClassification"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
@@ -1268,10 +1240,6 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isSeriesOf"/>
-        <Class IRI="#Series"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSizeClassificationOf"/>
         <Class IRI="#SizeClassification"/>
     </ObjectPropertyDomain>
@@ -1370,10 +1338,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasResource"/>
         <Class IRI="#Resource"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSeries"/>
-        <Class IRI="#Series"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSizeClassification"/>
@@ -1491,10 +1455,6 @@
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isSeriesOf"/>
-        <Class IRI="#Game"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#isSizeClassificationOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
@@ -1525,12 +1485,32 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
-        <DataProperty IRI="#requiresRam"/>
+        <DataProperty IRI="#hadLastChangeOn"/>
+        <DataProperty IRI="#happened"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hadSupportCancelled"/>
+        <DataProperty IRI="#happened"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#happened"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#requiresVideoRam"/>
+        <DataProperty IRI="#hasReason"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requires"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requiresRam"/>
+        <DataProperty IRI="#requires"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#requiresVideoRam"/>
+        <DataProperty IRI="#requires"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#runsInFramerate"/>
@@ -1539,15 +1519,35 @@
     <SubDataPropertyOf>
         <DataProperty IRI="#runsInResolution"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#wasAnnouncedOn"/>
+        <DataProperty IRI="#happened"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#wasCancelledOn"/>
+        <DataProperty IRI="#happened"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#wasFunded"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <DataProperty IRI="#happened"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#wasPublished"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <DataProperty IRI="#happened"/>
     </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hadLastChangeOn"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hadSupportCancelled"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReason"/>
+        <Class IRI="#UnfinishedGame"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#requiresRam"/>
         <Class IRI="#Game"/>
@@ -1562,6 +1562,14 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#runsInResolution"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#wasAnnouncedOn"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#wasCancelledOn"/>
         <Class IRI="#Game"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1572,6 +1580,30 @@
         <DataProperty IRI="#wasPublished"/>
         <Class IRI="#Game"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hadLastChangeOn"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hadSupportCancelled"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#happened"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasReason"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requires"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#requiresRam"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -1586,6 +1618,14 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#runsInResolution"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wasAnnouncedOn"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wasCancelledOn"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1600,6 +1640,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Abbreviation</IRI>
         <Literal>An abberviation has to be an abbreviation of something. Otherwise it does not exist.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abbreviation</IRI>
+        <Literal>An abbreviation of a name.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1675,6 +1720,26 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Company</IRI>
         <Literal>A company related to games.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Computer</IRI>
+        <Literal>A computer device.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Computer</IRI>
+        <Literal>E.g. Laptop, PC.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Console</IRI>
+        <Literal>A console dedicated to gaming.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Console</IRI>
+        <Literal>E.g. PlayStation, XBox.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1890,6 +1955,11 @@ Either has not been published or not yet been published.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Platform</IRI>
+        <Literal>A game may be available platforms.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Platform</IRI>
         <Literal>A platform on which the game may be played.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1921,16 +1991,6 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Resource</IRI>
         <Literal>e.g. internet forum, website, encyclopedia.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Series</IRI>
-        <Literal>A game series consisting of at least two games which are strongly related to each other.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Series</IRI>
-        <Literal>Games from a series usually share a (part of) its name.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2039,6 +2099,21 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hadLastChangeOn</IRI>
+        <Literal>A &quot;change&quot; can be a patch, a DLC, an extension etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hadLastChangeOn</IRI>
+        <Literal>Describes when the last change has been introduced to the game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hadSupportCancelled</IRI>
+        <Literal>Describes when the support for a game was discontinued.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasAbbreviation</IRI>
         <Literal>The property hasAbbreviation is functional because any Name can have only one Abbreviation to avoid confusion.</Literal>
     </AnnotationAssertion>
@@ -2051,6 +2126,11 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasRatingSystem</IRI>
         <Literal>A rating system does not have to be attributed to a country (it may be e.g. international).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReason</IRI>
+        <Literal>Describes a reason for an event (e.g. a game not being developed or published).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2091,6 +2171,16 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#runsInResolution</IRI>
         <Literal>Describes the maximal screen resolution of a game.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wasAnnouncedOn</IRI>
+        <Literal>Described the time when a game was first announced.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wasCancelledOn</IRI>
+        <Literal>Describes the date when a game was cancelled.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
