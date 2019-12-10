@@ -31,6 +31,9 @@
         <Class IRI="#AudioDevice"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#CPU"/>
     </Declaration>
     <Declaration>
@@ -107,6 +110,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#OutputDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaymentModel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Person"/>
@@ -208,6 +214,9 @@
         <ObjectProperty IRI="#hasLore"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasPaymentModel"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasPlatform"/>
     </Declaration>
     <Declaration>
@@ -275,6 +284,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isLoreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPaymentModel"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPlatformOf"/>
@@ -564,6 +576,10 @@
         <Class IRI="#OutputDevice"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Author"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#CPU"/>
         <Class IRI="#Hardware"/>
     </SubClassOf>
@@ -688,6 +704,28 @@
         <Class IRI="#Person"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="#Abbreviation"/>
+        <Class IRI="#ActionTime"/>
+        <Class IRI="#ArtPiece"/>
+        <Class IRI="#Company"/>
+        <Class IRI="#Country"/>
+        <Class IRI="#Game"/>
+        <Class IRI="#Genre"/>
+        <Class IRI="#Hardware"/>
+        <Class IRI="#Language"/>
+        <Class IRI="#Lore"/>
+        <Class IRI="#Name"/>
+        <Class IRI="#PaymentModel"/>
+        <Class IRI="#Person"/>
+        <Class IRI="#Rating"/>
+        <Class IRI="#RatingSystem"/>
+        <Class IRI="#Resource"/>
+        <Class IRI="#SizeClassification"/>
+        <Class IRI="#Software"/>
+        <Class IRI="#TimeSpan"/>
+        <Class IRI="#Universe"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Actor"/>
         <Class IRI="#Director"/>
         <Class IRI="#Influencer"/>
@@ -698,6 +736,14 @@
         <Class IRI="#Writer"/>
     </DisjointClasses>
     <DifferentIndividuals/>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <ObjectProperty IRI="#hasDirector"/>
+    </EquivalentObjectProperties>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <ObjectProperty IRI="#hasWriter"/>
+    </EquivalentObjectProperties>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="#hasPlatform"/>
         <ObjectProperty IRI="#requires"/>
@@ -760,6 +806,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLore"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPaymentModel"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -852,6 +902,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isLoreOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPaymentModel"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -965,6 +1019,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasLore"/>
         <ObjectProperty IRI="#isLoreOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPaymentModel"/>
+        <ObjectProperty IRI="#isPaymentModel"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasPlatform"/>
@@ -1098,6 +1156,10 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPaymentModel"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPlatform"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
@@ -1197,6 +1259,10 @@
         <Class IRI="#Lore"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPaymentModel"/>
+        <Class IRI="#PaymentModel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPlatformOf"/>
         <Class IRI="#Platform"/>
     </ObjectPropertyDomain>
@@ -1284,6 +1350,10 @@
         <Class IRI="#ArtPiece"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCountry"/>
         <Class IRI="#Country"/>
     </ObjectPropertyRange>
@@ -1314,6 +1384,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasLore"/>
         <Class IRI="#Lore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPaymentModel"/>
+        <Class IRI="#PaymentModel"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPlatform"/>
@@ -1408,6 +1482,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isLoreOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPaymentModel"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1545,6 +1623,10 @@
         <Class IRI="#Game"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#happened"/>
+        <Class IRI="#Game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#hasReason"/>
         <Class IRI="#UnfinishedGame"/>
     </DataPropertyDomain>
@@ -1578,10 +1660,6 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#wasPublished"/>
-        <Class IRI="#Game"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
         <Class IRI="#Game"/>
     </DataPropertyDomain>
     <DataPropertyRange>
@@ -1695,6 +1773,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#AudioDevice</IRI>
         <Literal>E.g. headphones, speakers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Author</IRI>
+        <Literal>An author of something.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1949,6 +2032,21 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PaymentModel</IRI>
+        <Literal>A game may have many payment models, because they are not disjoint.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PaymentModel</IRI>
+        <Literal>A way of paying for the game content.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PaymentModel</IRI>
+        <Literal>e.g. micro transaction, freemium, subscription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Person</IRI>
         <Literal>A single real person.</Literal>
     </AnnotationAssertion>
@@ -2115,6 +2213,11 @@ Either has not been published or not yet been published.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasAbbreviation</IRI>
+        <Literal>Describes the relation of a Name (domain) and an Abbreviation (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAbbreviation</IRI>
         <Literal>The property hasAbbreviation is functional because any Name can have only one Abbreviation to avoid confusion.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -2123,14 +2226,399 @@ Either has not been published or not yet been published.</Literal>
         <Literal>The property hasAbbreviation is inverse functional because any Abbreviation can have only one Name to avoid confusion.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasAbbreviation</IRI>
+        <IRI>#Abbreviation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasAbbreviation</IRI>
+        <IRI>#Name</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasActionTime</IRI>
+        <Literal>Describes the relation of a Game (domain) and an ActionTime (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasActionTime</IRI>
+        <IRI>#ActionTime</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasActionTime</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasActor</IRI>
+        <Literal>Describes the relation of a Movie (domain) and Actor (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasActor</IRI>
+        <IRI>#Actor</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasActor</IRI>
+        <IRI>#Movie</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasArtPiece</IRI>
+        <Literal>Describes the relation of a Lore (domain) and an ArtPiece (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasArtPiece</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasArtPiece</IRI>
+        <IRI>#Lore</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAuthor</IRI>
+        <Literal>Describes the relation of an ArtPiece or a Lore (domain) and an Author (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasAuthor</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasAuthor</IRI>
+        <IRI>#Author</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasAuthor</IRI>
+        <IRI>#Lore</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCountry</IRI>
+        <Literal>Describes the relation of a Company (domain) and a Country (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasCountry</IRI>
+        <IRI>#Company</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasCountry</IRI>
+        <IRI>#Country</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDeveloper</IRI>
+        <Literal>Describes the relation of a Game or a Lore (domain) and a Company (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasDeveloper</IRI>
+        <IRI>#Company</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasDeveloper</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDirector</IRI>
+        <Literal>Describes the relation of a Movie (domain) and a Director (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasDirector</IRI>
+        <IRI>#Director</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasDirector</IRI>
+        <IRI>#Movie</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDistributor</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Company (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasDistributor</IRI>
+        <IRI>#Company</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasDistributor</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGenre</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Genre (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasGenre</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasGenre</IRI>
+        <IRI>#Genre</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInfuencer</IRI>
+        <Literal>Describes the relation of a SocialMediaChannel (domain) and an Influencer (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasInfuencer</IRI>
+        <IRI>#Influencer</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasInfuencer</IRI>
+        <IRI>#SocialMediaChannel</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLanguage</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Language (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasLanguage</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasLanguage</IRI>
+        <IRI>#Language</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLore</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Lore (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasLore</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasLore</IRI>
+        <IRI>#Lore</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPaymentModel</IRI>
+        <Literal>Describes the relation of a Game (domain) and PaymentModel (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasPaymentModel</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasPaymentModel</IRI>
+        <IRI>#PaymentModel</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlatform</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Platform (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasPlatform</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasPlatform</IRI>
+        <IRI>#Platform</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProducer</IRI>
+        <Literal>Describes the relation of a Game or a Hardware or a Software (domain) and a Company (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasProducer</IRI>
+        <IRI>#Company</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasProducer</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasProducer</IRI>
+        <IRI>#Hardware</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasProducer</IRI>
+        <IRI>#Software</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPublisher</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Company (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasPublisher</IRI>
+        <IRI>#Company</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasPublisher</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRating</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRating</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Rating (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasRating</IRI>
+        <IRI>#Rating</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasRatingSystem</IRI>
         <Literal>A rating system does not have to be attributed to a country (it may be e.g. international).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRatingSystem</IRI>
+        <Literal>Describes the relation of a Country (domain) and a RatingSysten (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasRatingSystem</IRI>
+        <IRI>#Country</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasRatingSystem</IRI>
+        <IRI>#RatingSystem</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasReason</IRI>
         <Literal>Describes a reason for an event (e.g. a game not being developed or published).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasResource</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Resource (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasResource</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasResource</IRI>
+        <IRI>#Resource</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSizeClassification</IRI>
+        <Literal>Describes the relation of a Game (domain) and a SizeClassification (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasSizeClassification</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasSizeClassification</IRI>
+        <IRI>#SizeClassification</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSourceArtPiece</IRI>
+        <Literal>Describes the relation of a ArtPiece (domain) and a ArtPiece (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasSourceArtPiece</IRI>
+        <IRI>#ArtPiece</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSubCompany</IRI>
+        <Literal>Describes the relation of a Company (domain) and a Company (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasSubCompany</IRI>
+        <IRI>#Company</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUniverse</IRI>
+        <Literal>Describes the relation of a Game (domain) and a Universe (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasUniverse</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasUniverse</IRI>
+        <IRI>#Universe</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasWriter</IRI>
+        <Literal>Describes the relation of a Movie or Text (domain) and a Writer (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasWriter</IRI>
+        <IRI>#Movie</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasWriter</IRI>
+        <IRI>#Text</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasWriter</IRI>
+        <IRI>#Writer</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAbbreviationOf</IRI>
+        <Literal>Describes the relation of a Abbreviation (domain) and a Name (range).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2141,6 +2629,31 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isAbbreviationOf</IRI>
         <Literal>The property isAbbreviationOf is inverse functional because any Name can have only one Abbreviation to avoid confusion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isAbbreviationOf</IRI>
+        <IRI>#Abbreviation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isAbbreviationOf</IRI>
+        <IRI>#Name</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPaymentModel</IRI>
+        <Literal>Describes the relation of a PaymentModel (domain) and Game (range).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isPaymentModel</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isPaymentModel</IRI>
+        <IRI>#PaymentModel</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
