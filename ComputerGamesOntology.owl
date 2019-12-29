@@ -1,17 +1,40 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/jansawicki/ontologies/2019/10/untitled-ontology-9"
+     xml:base="http://www.semanticweb.org/jansawicki/ontologies/cgo"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/jansawicki/ontologies/2019/10/untitled-ontology-9">
+     ontologyIRI="http://www.semanticweb.org/jansawicki/ontologies/cgo"
+     versionIRI="http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0">
     <Prefix name="" IRI="http://www.semanticweb.org/jansawicki/ontologies/2019/10/untitled-ontology-9"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/terms#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal>Jan Sawicki</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal>The Computer Games Ontology is dedicated to solving the problem of finding games by their similarities. That means it is created to serve anyone who looks for a game and knows only their partial or full requirement but not the title itself.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal>http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+        <Literal>cgo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>First official release of Computer Games Ontology</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="#Abbreviation"/>
     </Declaration>
@@ -375,6 +398,18 @@
     <Declaration>
         <DataProperty IRI="#wasPublished"/>
     </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Actor"/>
         <ObjectIntersectionOf>
@@ -463,30 +498,30 @@
         <Class IRI="#NotDevelopedGame"/>
         <ObjectIntersectionOf>
             <Class IRI="#Game"/>
-            <ObjectExactCardinality cardinality="0">
+            <ObjectMaxCardinality cardinality="0">
                 <ObjectProperty IRI="#hasDeveloper"/>
                 <Class IRI="#Developer"/>
-            </ObjectExactCardinality>
+            </ObjectMaxCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#NotDistributesGame"/>
         <ObjectIntersectionOf>
             <Class IRI="#Game"/>
-            <ObjectExactCardinality cardinality="0">
+            <ObjectMaxCardinality cardinality="0">
                 <ObjectProperty IRI="#hasDistributor"/>
                 <Class IRI="#Distributor"/>
-            </ObjectExactCardinality>
+            </ObjectMaxCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#NotPublishedGame"/>
         <ObjectIntersectionOf>
             <Class IRI="#Game"/>
-            <ObjectExactCardinality cardinality="0">
+            <ObjectMaxCardinality cardinality="0">
                 <ObjectProperty IRI="#hasPublisher"/>
                 <Class IRI="#Publisher"/>
-            </ObjectExactCardinality>
+            </ObjectMaxCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
