@@ -108,6 +108,9 @@
         <Class IRI="#EsportGame"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Esporter"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Event"/>
     </Declaration>
     <Declaration>
@@ -118,6 +121,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Game"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameSeries"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Genre"/>
@@ -288,7 +294,13 @@
         <ObjectProperty IRI="#hasDistributor"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasEsporter"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGame"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasGenre"/>
@@ -369,7 +381,13 @@
         <ObjectProperty IRI="#isDistributorOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isEsporterOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isGameOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isGenreOf"/>
@@ -390,7 +408,7 @@
         <ObjectProperty IRI="#isPlatformOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isPrequel"/>
+        <ObjectProperty IRI="#isPrequelOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProducerOf"/>
@@ -414,7 +432,7 @@
         <ObjectProperty IRI="#isResourceOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isSequel"/>
+        <ObjectProperty IRI="#isSequelOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSizeClassificationOf"/>
@@ -533,6 +551,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Author"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isRelatedTo"/>
+                <Class IRI="#ArtPiece"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Developer"/>
         <ObjectIntersectionOf>
             <Class IRI="#Company"/>
@@ -568,6 +596,16 @@
             <Class IRI="#Game"/>
             <ObjectMinCardinality cardinality="1">
                 <ObjectProperty IRI="#hasEvent"/>
+                <Class IRI="#Tournament"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Esporter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isEsporterOf"/>
                 <Class IRI="#Tournament"/>
             </ObjectMinCardinality>
         </ObjectIntersectionOf>
@@ -783,6 +821,10 @@
         <Class IRI="#Game"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Esporter"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FirstPerson"/>
         <Class IRI="#Genre"/>
     </SubClassOf>
@@ -934,6 +976,31 @@
         <Class IRI="#Country"/>
         <Class IRI="#Event"/>
         <Class IRI="#Game"/>
+        <Class IRI="#GameSeries"/>
+        <Class IRI="#Genre"/>
+        <Class IRI="#Hardware"/>
+        <Class IRI="#Language"/>
+        <Class IRI="#Launcher"/>
+        <Class IRI="#Lore"/>
+        <Class IRI="#Name"/>
+        <Class IRI="#PaymentModel"/>
+        <Class IRI="#Person"/>
+        <Class IRI="#Rating"/>
+        <Class IRI="#RatingSystem"/>
+        <Class IRI="#Resource"/>
+        <Class IRI="#SizeClassification"/>
+        <Class IRI="#Software"/>
+        <Class IRI="#TimeSpan"/>
+        <Class IRI="#Universe"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Abbreviation"/>
+        <Class IRI="#ActionTime"/>
+        <Class IRI="#ArtPiece"/>
+        <Class IRI="#Company"/>
+        <Class IRI="#Country"/>
+        <Class IRI="#Event"/>
+        <Class IRI="#Game"/>
         <Class IRI="#Genre"/>
         <Class IRI="#Hardware"/>
         <Class IRI="#Language"/>
@@ -980,6 +1047,10 @@
         <Class IRI="#Actor"/>
         <Class IRI="#Influencer"/>
         <Class IRI="#Writer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Author"/>
+        <Class IRI="#Esporter"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Convention"/>
@@ -1043,7 +1114,15 @@
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEsporter"/>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasEvent"/>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGame"/>
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1151,7 +1230,15 @@
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isEsporterOf"/>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isEventOf"/>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isGameOf"/>
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1179,7 +1266,7 @@
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isPrequel"/>
+        <ObjectProperty IRI="#isPrequelOf"/>
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1211,7 +1298,7 @@
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isSequel"/>
+        <ObjectProperty IRI="#isSequelOf"/>
         <ObjectProperty IRI="#isRelatedTo"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1275,8 +1362,16 @@
         <ObjectProperty IRI="#isDistributorOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasEsporter"/>
+        <ObjectProperty IRI="#isEsporterOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasEvent"/>
         <ObjectProperty IRI="#isEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasGame"/>
+        <ObjectProperty IRI="#isGameOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasGenre"/>
@@ -1343,8 +1438,8 @@
         <ObjectProperty IRI="#isWriterOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isPrequel"/>
-        <ObjectProperty IRI="#isSequel"/>
+        <ObjectProperty IRI="#isPrequelOf"/>
+        <ObjectProperty IRI="#isSequelOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isRelatedTo"/>
@@ -1360,13 +1455,13 @@
         <ObjectProperty IRI="#hasSubCompany"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isPrequel"/>
+        <ObjectProperty IRI="#isPrequelOf"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#isRequiredFor"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isSequel"/>
+        <ObjectProperty IRI="#isSequelOf"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#requires"/>
@@ -1414,8 +1509,16 @@
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEsporter"/>
+        <Class IRI="#Tournament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEvent"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGame"/>
+        <Class IRI="#GameSeries"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasGenre"/>
@@ -1529,8 +1632,16 @@
         <Class IRI="#Company"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEsporterOf"/>
+        <Class IRI="#Esporter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isEventOf"/>
         <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isGameOf"/>
+        <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isGenreOf"/>
@@ -1557,7 +1668,7 @@
         <Class IRI="#Platform"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPrequel"/>
+        <ObjectProperty IRI="#isPrequelOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1592,7 +1703,7 @@
         <Class IRI="#Resource"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isSequel"/>
+        <ObjectProperty IRI="#isSequelOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1660,8 +1771,16 @@
         <Class IRI="#Company"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEsporter"/>
+        <Class IRI="#Esporter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEvent"/>
         <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGame"/>
+        <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGenre"/>
@@ -1771,8 +1890,16 @@
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEsporterOf"/>
+        <Class IRI="#Tournament"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isEventOf"/>
         <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isGameOf"/>
+        <Class IRI="#GameSeries"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isGenreOf"/>
@@ -1799,7 +1926,7 @@
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPrequel"/>
+        <ObjectProperty IRI="#isPrequelOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1835,7 +1962,7 @@
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isSequel"/>
+        <ObjectProperty IRI="#isSequelOf"/>
         <Class IRI="#Game"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2298,6 +2425,21 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Esporter</IRI>
+        <Literal>A Person playing EsportGames (i,e, playing Games competetively).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Esporter</IRI>
+        <Literal>It is enough for a person to play one EsportGame (i.e. play in a single Tournament) to be a Esporter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Esporter</IRI>
+        <Literal>This class may also be called &quot;Player&quot;, but it would be too confusing, becuase everyone that plays games can be called a &quot;player&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Event</IRI>
         <Literal>An event.</Literal>
     </AnnotationAssertion>
@@ -2373,6 +2515,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Game</IRI>
         <Literal>The central point of the whole ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GameSeries</IRI>
+        <Literal>A series of Games, which consists of at least two Games that are related (represent two Game titles).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2901,6 +3048,16 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasEsporter</IRI>
+        <IRI>#Esporter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#hasEsporter</IRI>
+        <IRI>#Tournament</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#hasEvent</IRI>
         <Literal>Event</Literal>
     </AnnotationAssertion>
@@ -2908,6 +3065,16 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#hasEvent</IRI>
         <Literal>Game</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGame</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGame</IRI>
+        <IRI>#GameSeries</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3216,6 +3383,16 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isEsporterOf</IRI>
+        <IRI>#Esporter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isEsporterOf</IRI>
+        <IRI>#Tournament</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#isEventOf</IRI>
         <Literal>Event</Literal>
     </AnnotationAssertion>
@@ -3223,6 +3400,16 @@ Either has not been published or not yet been published.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#isEventOf</IRI>
         <Literal>Game</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isGameOf</IRI>
+        <IRI>#Game</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isGameOf</IRI>
+        <IRI>#GameSeries</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
@@ -3281,7 +3468,7 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
-        <IRI>#isPrequel</IRI>
+        <IRI>#isPrequelOf</IRI>
         <IRI>#Game</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -3371,7 +3558,7 @@ Either has not been published or not yet been published.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
-        <IRI>#isSequel</IRI>
+        <IRI>#isSequelOf</IRI>
         <IRI>#Game</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
