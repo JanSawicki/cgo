@@ -182,10 +182,19 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCountry">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isCountryOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Country"/>
+        <rdfs:comment>Descrbies if a Company is originating from a Country or if a RatingSystem is used in a Country.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Country"/>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
     </owl:ObjectProperty>
     
 
@@ -1083,6 +1092,17 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasBadLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasBadLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if a Game has any bad language of any magnitude according to a particular RatingSystem.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode">
@@ -1096,6 +1116,17 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasDrug -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasDrug">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if a Game has any drug references according to a particular RatingSystem.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasGameplayTime -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasGameplayTime">
@@ -1105,6 +1136,17 @@ The object property &quot;requires&quot; links a Game to a particular type of So
         <rdfs:comment>Descibes the average time of finishing a Game.</rdfs:comment>
         <rdfs:comment>Time is given in hours.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMinimalAgeRestrication -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMinimalAgeRestrication">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedShort"/>
+        <rdfs:comment>Describes the minimal age to play a Game according to a particular RatingSystem.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1134,6 +1176,17 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSex">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if a Game has any sexual references according to a particular RatingSystem.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSubGenre -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSubGenre">
@@ -1142,6 +1195,17 @@ The object property &quot;requires&quot; links a Game to a particular type of So
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Describes subgenres of Genre.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Genre"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasViolance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasViolance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if a Game has any violance (including real and fantasy) according to a particular RatingSystem.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1336,6 +1400,14 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
+    <!-- http://dbpedia.org/ontology/Artwork -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Artwork">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
+    </owl:Class>
+    
+
+
     <!-- http://dbpedia.org/ontology/Company -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Company">
@@ -1514,7 +1586,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece">
-        <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Artwork"/>
         <rdfs:comment>A piece of art that may somehow be related to a game.</rdfs:comment>
         <rdfs:comment>Piece of art may not have an Author (e.g. Author is unknown).</rdfs:comment>
         <rdfs:comment>PieceOfArt may have many authors (e.g. Movies)</rdfs:comment>
