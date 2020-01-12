@@ -13,12 +13,16 @@
      xmlns:vann1="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo">
         <owl:versionIRI rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-14T13:52:03</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-21T16:00:00</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-28T20:00:00</dc:created>
+        <dc:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIT</dc:license>
+        <dc:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/JanSawicki/cgo</dc:license>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jan Sawicki</dc:creator>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Computer Games Ontology is dedicated to solving the problem of finding games by their similarities. That means it is created to serve anyone who looks for a game and knows only their partial or full requirement but not the title itself.</dc:description>
         <dc:language>English</dc:language>
         <vann:preferredNamespaceUri>http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0</vann:preferredNamespaceUri>
         <vann1:preferredNamespacePrefix>cgo</vann1:preferredNamespacePrefix>
-        <owl:versionInfo>First official release of Computer Games Ontology</owl:versionInfo>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The first release of Computer Games Ontology</owl:versionInfo>
     </owl:Ontology>
     
@@ -35,9 +39,27 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/created"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/dateAccepted -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/dateAccepted"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/dateSubmitted -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/dateSubmitted"/>
     
 
 
@@ -50,6 +72,18 @@
     <!-- http://purl.org/dc/elements/1.1/language -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/references -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/references"/>
     
 
 
