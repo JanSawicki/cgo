@@ -14,9 +14,9 @@
     <owl:Ontology rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo">
         <owl:versionIRI rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-14T13:52:03</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jan Sawicki</dc:creator>
         <dc:dateAccepted rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-28T20:00:00</dc:dateAccepted>
         <dc:dateSubmitted rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-21T16:00:00</dc:dateSubmitted>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jan Sawicki</dc:creator>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Computer Games Ontology is dedicated to solving the problem of finding games by their similarities. That means it is created to serve anyone who looks for a game and knows only their partial or full requirement but not the title itself.</dc:description>
         <dc:language>English</dc:language>
         <dc:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIT</dc:license>
@@ -96,6 +96,18 @@
     <!-- http://purl.org/dc/terms#creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms#creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms#dateAccepted -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms#dateAccepted"/>
+    
+
+
+    <!-- http://purl.org/dc/terms#dateSubmitted -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms#dateSubmitted"/>
     
 
 
@@ -192,8 +204,16 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasArtPiece">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isArtPieceOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
+        <rdfs:seeAlso rdf:resource="http://dbpedia.org/ontology/Game"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
     </owl:ObjectProperty>
@@ -404,6 +424,17 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Mod"/>
         <rdfs:comment>The relation is transitive, because a Mod may have a different mod based on it.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isModOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMusician -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMusician">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isMusicianOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Music"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Musician"/>
     </owl:ObjectProperty>
     
 
@@ -680,7 +711,15 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#isArtPieceOf">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:seeAlso rdf:resource="http://dbpedia.org/ontology/Game"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
     </owl:ObjectProperty>
@@ -856,6 +895,16 @@
         </rdfs:range>
         <rdfs:comment>A Mod can be a Mod of a Game or an extension of another Mod.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#isMusicianOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#isMusicianOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Musician"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Music"/>
     </owl:ObjectProperty>
     
 
@@ -1196,7 +1245,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#happened"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Describes when the support for a game was discontinued.</rdfs:comment>
+        <rdfs:comment>Describes when the support for a game has been discontinued.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
     </owl:DatatypeProperty>
     
@@ -1487,7 +1536,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>A relation describing when a company was funded.</rdfs:comment>
-        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
     </owl:DatatypeProperty>
     
 
@@ -2227,11 +2276,41 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Music -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Music">
+		<owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/MusicalWork"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
+        <rdfs:comment>A piece of music (e.g. a song).</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Musical -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Musical">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Genre"/>
         <rdfs:seeAlso>e.g. singing games, instrument playing games</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Musician -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Musician">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasArtPiece"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Music"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
     </owl:Class>
     
 
@@ -2413,6 +2492,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Review">
         <rdfs:comment>A Review of a Game.</rdfs:comment>
+        <rdfs:comment>There is no class nor proeprty that maps a review to a particular numeric value, because various sources may have different scales with different precisions and comparing them may be hard.</rdfs:comment>
     </owl:Class>
     
 
@@ -2682,85 +2762,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Abbreviation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ActionTime"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Country"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Event"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#GameSeries"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Genre"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Language"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Mod"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Name"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#PaymentModel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Rating"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Resource"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#SizeClassification"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Software"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#TimeSpan"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Universe"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Abbreviation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ActionTime"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Country"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Event"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Genre"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Language"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Name"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#PaymentModel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Rating"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Resource"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#SizeClassification"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Software"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#TimeSpan"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Universe"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Abbreviation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ActionTime"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Company"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Country"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Genre"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Language"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Name"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#PaymentModel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Rating"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Resource"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#SizeClassification"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Software"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#TimeSpan"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Universe"/>
-        </owl:members>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
