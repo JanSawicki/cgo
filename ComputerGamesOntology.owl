@@ -213,7 +213,6 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
-        <rdfs:seeAlso rdf:resource="http://dbpedia.org/ontology/Game"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
     </owl:ObjectProperty>
@@ -719,7 +718,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:seeAlso rdf:resource="http://dbpedia.org/ontology/Game"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore"/>
     </owl:ObjectProperty>
@@ -1271,17 +1269,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
-    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasBadLanguage -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasBadLanguage">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Indicates if a Game has any bad language of any magnitude according to a particular RatingSystem.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode">
@@ -1614,14 +1601,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
-    <!-- http://dbpedia.org/ontology/Game -->
-
-    <owl:Class rdf:about="http://dbpedia.org/ontology/Game">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#VideoGame"/>
-    </owl:Class>
-    
-
-
     <!-- http://dbpedia.org/ontology/Genre -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Genre">
@@ -1634,6 +1613,14 @@ The object property &quot;requires&quot; links a Game to a particular type of So
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Language">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicalWork -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicalWork">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Music"/>
     </owl:Class>
     
 
@@ -1753,7 +1740,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Android -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Android">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem"/>
         <rdfs:comment>A distribution of Android (mobile operating system).</rdfs:comment>
     </owl:Class>
     
@@ -1805,8 +1792,8 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#CPU -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#CPU">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Computer"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Console"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware"/>
         <rdfs:comment>A central processing unit.</rdfs:comment>
     </owl:Class>
     
@@ -1821,16 +1808,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
-    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Computer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Computer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Platform"/>
-        <rdfs:comment>A computer device.</rdfs:comment>
-        <rdfs:comment>E.g. Laptop, PC.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerGame -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerGame">
@@ -1839,17 +1816,28 @@ The object property &quot;requires&quot; links a Game to a particular type of So
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasPlatform"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasOperatingSystem"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Computer"/>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
         <rdfs:comment>A Game that is distributed for a Computer.</rdfs:comment>
-        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Computer"/>
+        <rdfs:comment>Determining wheather a Game is a ComputerGame depends if it runs on an OperatingSystem which is a ComputerOperatingSystem. 
+This logic is different for ConsoleGame.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem"/>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ConsoleGame"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
     </owl:Class>
     
 
@@ -1881,8 +1869,12 @@ The object property &quot;requires&quot; links a Game to a particular type of So
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
         <rdfs:comment>A Game that is distributed for a Console.</rdfs:comment>
+        <rdfs:comment>Determining wheather a Game is a ConsoleGame depends if it has a Platform which is a Console.
+This logic is different for ComputerGame and MobileGame.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerGame"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Console"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileGame"/>
     </owl:Class>
     
 
@@ -2070,8 +2062,8 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#GPU -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#GPU">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Computer"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Console"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware"/>
         <rdfs:comment>A graphics processing unit.</rdfs:comment>
     </owl:Class>
     
@@ -2080,6 +2072,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Game -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#VideoGame"/>
         <rdfs:comment>A Game has to have a distinct name.</rdfs:comment>
         <rdfs:comment>A Game may have many Platforms (e.g. it can be distributed for computers and consoles).</rdfs:comment>
         <rdfs:comment>A Game should be treated as a title, not a computer program.</rdfs:comment>
@@ -2125,7 +2118,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#IOS -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#IOS">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem"/>
         <rdfs:comment>A distribution of IOS (mobile operating system).</rdfs:comment>
     </owl:Class>
     
@@ -2193,7 +2186,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Macintosh -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Macintosh">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem"/>
         <rdfs:comment>A distribution of Macintosh Operating System (macOS).</rdfs:comment>
     </owl:Class>
     
@@ -2226,17 +2219,28 @@ The object property &quot;requires&quot; links a Game to a particular type of So
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasPlatform"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasOperatingSystem"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Mobile"/>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
         <rdfs:comment>A Game that is distributed for mobile platform.</rdfs:comment>
+        <rdfs:comment>Determining wheather a Game is a ComputerGame depends if it runs on an OperatingSystem which is a MobileOperatingSystem. 
+This logic is different for ConsoleGame.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ConsoleGame"/>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
-        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Mobile"/>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
     </owl:Class>
     
 
@@ -2279,7 +2283,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Music -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Music">
-		<owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/MusicalWork"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece"/>
         <rdfs:comment>A piece of music (e.g. a song).</rdfs:comment>
     </owl:Class>
@@ -2692,7 +2695,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Unix -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Unix">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem"/>
         <rdfs:comment>A distribution of Unix-like Operating System (any of the UNIX distributions).</rdfs:comment>
     </owl:Class>
     
@@ -2727,7 +2730,7 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem"/>
         <rdfs:comment>A distribution of Microsoft Windows Operating System (Windows OS).</rdfs:comment>
     </owl:Class>
     
@@ -2776,16 +2779,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
             <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Writer"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Android"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#IOS"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Macintosh"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Unix"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
