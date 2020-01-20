@@ -2,6 +2,7 @@
 <rdf:RDF xmlns="http://www.semanticweb.org/jansawicki/ontologies/cgo"
      xml:base="http://www.semanticweb.org/jansawicki/ontologies/cgo"
      xmlns:dc="http://purl.org/dc/terms#"
+	 xmlns:cgo="http://www.semanticweb.org/jansawicki/ontologies/cgo#"
      xmlns:dbo="http://dbpedia.org/resource/classes#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -14,11 +15,11 @@
     <owl:Ontology rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo">
         <owl:versionIRI rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-14T13:52:03</dc:created>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jan Sawicki</dc:creator>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jan Sawicki</dc:created>
         <dc:dateAccepted rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-28T20:00:00</dc:dateAccepted>
         <dc:dateSubmitted rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-21T16:00:00</dc:dateSubmitted>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Computer Games Ontology is dedicated to solving the problem of finding games by their similarities. That means it is created to serve anyone who looks for a game and knows only their partial or full requirement but not the title itself.</dc:description>
-        <dc:language>English</dc:language>
+        <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">English</dc:language>
         <dc:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIT</dc:license>
         <dc:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/JanSawicki/cgo</dc:license>
         <vann:preferredNamespaceUri>http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0</vann:preferredNamespaceUri>
@@ -137,7 +138,9 @@
 
     <!-- http://purl.org/vocab/vann#preferredNamespaceUri -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann#preferredNamespaceUri"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann#preferredNamespaceUri">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/vann#preferredNamespaceUri"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -1221,6 +1224,18 @@ The object property &quot;requires&quot; links a Game to a particular type of So
     
 
 
+    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Describes the address or any relative link to a Resource.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode">
@@ -1316,7 +1331,7 @@ E.g.: an 3-year-old child will not understand how to play a intense strategy bas
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasReviewSource">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Review"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes the source of a Review.</rdfs:comment>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e.g.: a link to a website or game portal.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Review"/>
@@ -1390,9 +1405,10 @@ E.g.: an 3-year-old child will not understand how to play a intense strategy bas
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresRam">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedShort"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes how much RAM a Game requires.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+        <rdfs:seeAlso>Given in MB (MegaBytes).</rdfs:seeAlso>
     </owl:DatatypeProperty>
     
 
@@ -1415,9 +1431,10 @@ E.g.: an 3-year-old child will not understand how to play a intense strategy bas
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresVideoRam">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes how much VRAM a Game requires.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
+        <rdfs:seeAlso>Given in MB (MegaBytes).</rdfs:seeAlso>
     </owl:DatatypeProperty>
     
 
@@ -1737,7 +1754,6 @@ E.g.: an 3-year-old child will not understand how to play a intense strategy bas
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Esporter"/>
         <rdfs:comment>An author of something.</rdfs:comment>
     </owl:Class>
     
@@ -2304,15 +2320,6 @@ This logic is different for ConsoleGame.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Processor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Processor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware"/>
-        <rdfs:comment>A computer processor.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/jansawicki/ontologies/cgo#Producer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Producer">
@@ -2687,22 +2694,6 @@ This logic is different for ConsoleGame.</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Director"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Writer"/>
-        </owl:members>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
