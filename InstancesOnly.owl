@@ -1,0 +1,330 @@
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Android2.2
+cgo:Android2.2 rdf:type owl:NamedIndividual ,
+                        cgo:Android ;
+               cgo:hasName cgo:Android_Froyo .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Android_Froyo
+cgo:Android_Froyo rdf:type owl:NamedIndividual ,
+                           cgo:Name ;
+                  rdfs:label "Android Froyo" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#BattleForMiddleEarth
+cgo:BattleForMiddleEarth rdf:type owl:NamedIndividual ,
+                                  cgo:GameSeries ;
+                         cgo:hasName cgo:John_Ronald_Reuel_Tolkien ;
+                         cgo:isAuthorOf cgo:LordOfTheRingTheFellowshipOfTheRing .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#BattleForMiddleEarthI
+cgo:BattleForMiddleEarthI rdf:type owl:NamedIndividual ,
+                                   cgo:ComputerGame ;
+                          cgo:hasDeveloper cgo:EA ;
+                          cgo:hasGameSeries cgo:BattleForMiddleEarth ;
+                          cgo:hasLanguage cgo:English ;
+                          cgo:hasLore cgo:LordOfTheRingsLore ;
+                          cgo:hasResource cgo:ModDb .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#BattleForMiddleEarthII
+cgo:BattleForMiddleEarthII rdf:type owl:NamedIndividual ,
+                                    cgo:ComputerGame ;
+                           cgo:hasActionTime cgo:LotrThirdAge ;
+                           cgo:hasDeveloper cgo:EA ;
+                           cgo:hasGameSeries cgo:BattleForMiddleEarth ;
+                           cgo:hasLanguage cgo:English ;
+                           cgo:hasLore cgo:LordOfTheRingsLore ;
+                           cgo:hasMod cgo:Bfme2:HdEdition ;
+                           cgo:hasResource cgo:ModDb ;
+                           cgo:requires cgo:PentiumIII .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#CandyCrushSaga
+cgo:CandyCrushSaga rdf:type owl:NamedIndividual ,
+                            cgo:MobileGame ;
+                   cgo:hasGenre cgo:TileMatching ;
+                   cgo:hasName cgo:Candy_Crush_Saga ;
+                   cgo:requires cgo:Android2.2 ,
+                                cgo:IOS4.3 ;
+                   cgo:hasMinimumAge "3"^^xsd:unsignedShort .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Candy_Crush_Saga
+cgo:Candy_Crush_Saga rdf:type owl:NamedIndividual ,
+                              cgo:Name ;
+                     rdfs:label "Candy Crush Saga" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#China
+cgo:China rdf:type owl:NamedIndividual ,
+                   cgo:Country .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ChrissyCostanza
+cgo:ChrissyCostanza rdf:type owl:NamedIndividual ,
+                             cgo:Musician .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Chrissy_Costanza
+cgo:Chrissy_Costanza rdf:type owl:NamedIndividual ,
+                              cgo:Name ;
+                     cgo:hasName cgo:Chrissy_Costanza ;
+                     rdfs:label "Chrissy Costanza" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#EA
+cgo:EA rdf:type owl:NamedIndividual ,
+                cgo:Developer ;
+       cgo:hasName cgo:Electronic_Arts .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Electronic_Arts
+cgo:Electronic_Arts rdf:type owl:NamedIndividual ,
+                             cgo:Name ;
+                    rdfs:label "Electronic Arts" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#English
+cgo:English rdf:type owl:NamedIndividual ,
+                     cgo:Language .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Esrb
+cgo:Esrb rdf:type owl:NamedIndividual ,
+                  cgo:RatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Freemium
+cgo:Freemium rdf:type owl:NamedIndividual ,
+                      cgo:PaymentModel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#IOS4.3
+cgo:IOS4.3 rdf:type owl:NamedIndividual ,
+                    cgo:IOS .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Imaqtpie
+cgo:Imaqtpie rdf:type owl:NamedIndividual ,
+                      cgo:Influencer ;
+             cgo:hasName cgo:Michael_Santana .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Jankos
+cgo:Jankos rdf:type owl:NamedIndividual ,
+                    cgo:Esporter ;
+           cgo:isEsporterOf cgo:Worlds2019 .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#John_Ronald_Reuel_Tolkien
+cgo:John_Ronald_Reuel_Tolkien rdf:type owl:NamedIndividual ,
+                                       cgo:Name ;
+                              rdfs:label "John Ronald Reuel Tolkien" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#JrrTolkien
+cgo:JrrTolkien rdf:type owl:NamedIndividual ,
+                        cgo:Writer .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LeagueOfLegends
+cgo:LeagueOfLegends rdf:type owl:NamedIndividual ,
+                             cgo:ComputerGame ;
+                    cgo:hasEsporter cgo:Jankos ;
+                    cgo:hasGenre cgo:Moba ;
+                    cgo:hasLanguage cgo:English ;
+                    cgo:hasLore cgo:LeagueOfLegendsLore ;
+                    cgo:hasName cgo:League_Of_Legends ;
+                    cgo:hasPaymentModel cgo:Freemium ,
+                                        cgo:Microtransaction ;
+                    cgo:hasRating cgo:T ;
+                    cgo:hasReview cgo:Mmos.comHuyLuong ;
+                    cgo:hasSizeClassification <http://www.semanticweb.org/jansawicki/ontologies/cgo#AAA+> ;
+                    cgo:isRelatedTo cgo:LegendsNeverDie ;
+                    cgo:requires cgo:NvidiaGeForce8800 ,
+                                 cgo:Windows10 ,
+                                 cgo:Windows7 ;
+                    cgo:requiresController "false"^^xsd:boolean ;
+                    cgo:requiresInternet "true"^^xsd:boolean ;
+                    cgo:requiresKeyboard "true"^^xsd:boolean ;
+                    cgo:requiresMouse "true"^^xsd:boolean ;
+                    cgo:requiresRam "2"^^xsd:unsignedShort ;
+                    cgo:requiresVideoRam "512"^^xsd:unsignedShort .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LeagueOfLegendsLore
+cgo:LeagueOfLegendsLore rdf:type owl:NamedIndividual ,
+                                 cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#League_Of_Legends
+cgo:League_Of_Legends rdf:type owl:NamedIndividual ,
+                               cgo:Name ;
+                      rdfs:label "League of Legends" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LegendsNeverDie
+cgo:LegendsNeverDie rdf:type owl:NamedIndividual ,
+                             cgo:Music ;
+                    cgo:hasMusician cgo:ChrissyCostanza .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LordOfTheRingTheFellowshipOfTheRing
+cgo:LordOfTheRingTheFellowshipOfTheRing rdf:type owl:NamedIndividual ,
+                                                 cgo:Text ;
+                                        cgo:hasName cgo:The_Lord_Of_The_Rings:_The_Fellowship_of_the_Ring .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LordOfTheRingsLore
+cgo:LordOfTheRingsLore rdf:type owl:NamedIndividual ,
+                                cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LordOfTheRingsTheFellowshipOfTheRingMovie
+cgo:LordOfTheRingsTheFellowshipOfTheRingMovie rdf:type owl:NamedIndividual ,
+                                                       cgo:Movie ;
+                                              cgo:hasName cgo:LordOfTheRingTheFellowshipOfTheRing .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LotrThirdAge
+cgo:LotrThirdAge rdf:type owl:NamedIndividual ,
+                          cgo:ActionTime .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Marcin_Jankowski
+cgo:Marcin_Jankowski rdf:type owl:NamedIndividual ,
+                              cgo:Name ;
+                     cgo:hasName cgo:Marcin_Jankowski ;
+                     rdfs:label "Marcin Jankowski" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Michael_Santana
+cgo:Michael_Santana rdf:type owl:NamedIndividual ,
+                             cgo:Name ;
+                    rdfs:label "Michael Santana" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Microtransaction
+cgo:Microtransaction rdf:type owl:NamedIndividual ,
+                              cgo:PaymentModel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Mmos.comHuyLuong
+cgo:Mmos.comHuyLuong rdf:type owl:NamedIndividual ,
+                              cgo:Review ;
+                     cgo:hasReviewAbstract "\"League of Legends is the most played PC game in the world for a reason. It's definitely worth a try. Play it with friends, you’ll have more fun. Whether it be casual or competitive, there's something for everyone. Those new to the genre shouldn't be too intimidated, either. League is much more newbie-friendly than other MOBAs.\""^^xsd:string ;
+                     cgo:hasReviewSource "https://mmos.com/review/league-of-legends"^^xsd:anyURI .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Moba
+cgo:Moba rdf:type owl:NamedIndividual ,
+                  cgo:Strategy .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ModDb
+cgo:ModDb rdf:type owl:NamedIndividual ,
+                   cgo:Resource ;
+          cgo:hasAddress "https://www.moddb.com/"^^xsd:anyURI .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#NvidiaGeForce8800
+cgo:NvidiaGeForce8800 rdf:type owl:NamedIndividual ,
+                               cgo:CPU .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#PentiumIII
+cgo:PentiumIII rdf:type owl:NamedIndividual ,
+                        cgo:CPU .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Real-time_Strategy
+cgo:Real-time_Strategy rdf:type owl:NamedIndividual ,
+                                cgo:Name ;
+                       cgo:hasAbbreviation cgo:RtsAbbreviation ;
+                       rdfs:label "Real-time Strategy" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Riot
+cgo:Riot rdf:type owl:NamedIndividual ,
+                  cgo:Developer ;
+         cgo:hasName cgo:Riot_Games ;
+         cgo:isSubCompanyOf cgo:Tencent .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Riot_Games
+cgo:Riot_Games rdf:type owl:NamedIndividual ,
+                        cgo:Name ;
+               rdfs:label "Riot Games" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RtsAbbreviation
+cgo:RtsAbbreviation rdf:type owl:NamedIndividual ,
+                             cgo:Abbreviation ;
+                    rdfs:label "RTS" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RtsGenre
+cgo:RtsGenre rdf:type owl:NamedIndividual ,
+                      cgo:RealTime ;
+             cgo:hasName cgo:Real-time_Strategy .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#T
+cgo:T rdf:type owl:NamedIndividual ,
+               cgo:Rating ;
+      cgo:hasRatingSystem cgo:Esrb .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Tencent
+cgo:Tencent rdf:type owl:NamedIndividual ,
+                     cgo:Company ;
+            cgo:hasCountry cgo:China .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#TileMatching
+cgo:TileMatching rdf:type owl:NamedIndividual ,
+                          cgo:Puzzle .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows10
+cgo:Windows10 rdf:type owl:NamedIndividual ,
+                       cgo:Windows .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows7
+cgo:Windows7 rdf:type owl:NamedIndividual ,
+                      cgo:Windows .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Worlds2019
+cgo:Worlds2019 rdf:type owl:NamedIndividual ,
+                        cgo:Tournament ;
+               cgo:isEsporterOf cgo:Worlds2019 .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#AAA+
+<http://www.semanticweb.org/jansawicki/ontologies/cgo#AAA+> rdf:type owl:NamedIndividual ,
+                                                                     cgo:SizeClassification .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Battle_for_Middle_Earth_2:_HD_Edition
+cgo:Battle_for_Middle_Earth_2:_HD_Edition rdf:type owl:NamedIndividual ,
+                                                   cgo:Name ;
+                                          rdfs:label "Battle for Middle Earth 2: HD Edition" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Bfme2:HdEdition
+cgo:Bfme2:HdEdition rdf:type owl:NamedIndividual ,
+                             cgo:Mod ;
+                    cgo:hasName cgo:Battle_for_Middle_Earth_2:_HD_Edition .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#The_Lord_Of_The_Rings:_The_Fellowship_of_the_Ring
+cgo:The_Lord_Of_The_Rings:_The_Fellowship_of_the_Ring rdf:type owl:NamedIndividual ,
+                                                               cgo:Name ;
+                                                      rdfs:label "The Lord Of The Rings: The Fellowship Of The Ring." .

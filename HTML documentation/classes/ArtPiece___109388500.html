@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='../ontologies/index.html' class='' >Ontologies</a>
+<a href='index.html' class='' >Classes</a>
+<a href='../objectproperties/index.html' class='' >Object Properties</a>
+<a href='../dataproperties/index.html' class='' >Data Properties</a>
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+Individuals
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>Class: ArtPiece</h2>
+
+<div id='annotations_(3)'>
+<h4>Annotations (3)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"A piece of art that may somehow be related to a game."</span></li>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"Piece of art may not have an Author (e.g. Author is unknown)."</span></li>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"PieceOfArt may have many authors (e.g. Movies)"</span></li>
+</ul>
+</div>
+</div><!-- annotations (3) -->
+
+
+<div id='equivalents_(1)'>
+<h4>Equivalents (1)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="Artwork___630264786.html" class='Class' title="http://dbpedia.org/ontology/Artwork">dbo:Artwork</a></li>
+</ul>
+</div>
+</div><!-- equivalents (1) -->
+
+
+<div id='usage_(14)'>
+<h4>Usage (14)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="AdvancedLore___-62279999.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#AdvancedLore">AdvancedLore</a> <span class='keyword'>&equiv;</span> <a href="Lore___1298912127.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore">Lore</a> <span class='keyword'>and</span> <a href="../objectproperties/hasArtPiece___-1375765650.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasArtPiece">hasArtPiece</a> <span class='min'>min</span> 5 <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="Author___-1025923564.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Author">Author</a> <span class='keyword'>&equiv;</span> <a href="Person___-611311650.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person">Person</a> <span class='keyword'>and</span> <a href="../objectproperties/isRelatedTo___-1827790235.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo">isRelatedTo</a> <span class='min'>min</span> 1 <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="Movie___1371072377.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Movie">Movie</a> <span class='keyword'>&equiv;</span> <span class='Class active-entity'>ArtPiece</span> <span class='keyword'>and</span> <a href="../objectproperties/hasActor___1409175524.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasActor">hasActor</a> <span class='some'>some</span> <a href="Actor___1359630910.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor">Actor</a> <span class='keyword'>and</span> <a href="../objectproperties/hasDirector___122071215.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasDirector">hasDirector</a> <span class='some'>some</span> <a href="Director___1607225365.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Director">Director</a></li>
+<li class="asserted"><a href="SimpleLore___1858189393.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#SimpleLore">SimpleLore</a> <span class='keyword'>&equiv;</span> <a href="Lore___1298912127.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore">Lore</a> <span class='keyword'>and</span> <a href="../objectproperties/hasArtPiece___-1375765650.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasArtPiece">hasArtPiece</a> <span class='max'>max</span> 4 <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="SocialMediaChannel___-2081177323.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#SocialMediaChannel">SocialMediaChannel</a> <span class='keyword'>&equiv;</span> <span class='Class active-entity'>ArtPiece</span> <span class='keyword'>and</span> <a href="../objectproperties/hasInfuencer___1619174850.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasInfuencer">hasInfuencer</a> <span class='some'>some</span> <a href="Influencer___769864870.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer">Influencer</a></li>
+<li class="asserted"><a href="Text___1299141046.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Text">Text</a> <span class='keyword'>&equiv;</span> <span class='Class active-entity'>ArtPiece</span> <span class='keyword'>and</span> <a href="../objectproperties/hasWriter___1136713750.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasWriter">hasWriter</a> <span class='some'>some</span> <a href="Writer___-399169284.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Writer">Writer</a></li>
+<li class="asserted"><a href="../objectproperties/hasAuthor___509959470.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasAuthor">hasAuthor</a> <span class='keyword'>Domain</span> (<a href="Lore___1298912127.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore">Lore</a> <span class='keyword'>or</span> <span class='Class active-entity'>ArtPiece</span>)</li>
+<li class="asserted"><a href="../objectproperties/hasSourceArtPiece___277088553.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSourceArtPiece">hasSourceArtPiece</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="../objectproperties/isArtPieceOf___-1209704779.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#isArtPieceOf">isArtPieceOf</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="../objectproperties/isSourceArtPieceOf___-897434192.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#isSourceArtPieceOf">isSourceArtPieceOf</a> <span class='keyword'>Domain</span> <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="../objectproperties/hasArtPiece___-1375765650.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasArtPiece">hasArtPiece</a> <span class='keyword'>Range</span> <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="../objectproperties/hasSourceArtPiece___277088553.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSourceArtPiece">hasSourceArtPiece</a> <span class='keyword'>Range</span> <span class='Class active-entity'>ArtPiece</span></li>
+<li class="asserted"><a href="../objectproperties/isAuthorOf___1936340085.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#isAuthorOf">isAuthorOf</a> <span class='keyword'>Range</span> (<a href="Lore___1298912127.html" class='Class' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore">Lore</a> <span class='keyword'>or</span> <span class='Class active-entity'>ArtPiece</span>)</li>
+<li class="asserted"><a href="../objectproperties/isSourceArtPieceOf___-897434192.html" class='Object Property' title="http://www.semanticweb.org/jansawicki/ontologies/cgo#isSourceArtPieceOf">isSourceArtPieceOf</a> <span class='keyword'>Range</span> <span class='Class active-entity'>ArtPiece</span></li>
+</ul>
+</div>
+</div><!-- usage (14) -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>

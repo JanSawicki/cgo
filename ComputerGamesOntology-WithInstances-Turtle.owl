@@ -1,0 +1,2286 @@
+@prefix : <http://www.semanticweb.org/jansawicki/ontologies/cgo> .
+@prefix dc: <http://purl.org/dc/terms#> .
+@prefix cgo: <http://www.semanticweb.org/jansawicki/ontologies/cgo#> .
+@prefix dbo: <http://dbpedia.org/resource/classes#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix vann1: <http://purl.org/vocab/vann/> .
+@base <http://www.semanticweb.org/jansawicki/ontologies/cgo> .
+
+<http://www.semanticweb.org/jansawicki/ontologies/cgo> rdf:type owl:Ontology ;
+                                                        owl:versionIRI <http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0> ;
+                                                        dc:created "2019-11-14T13:52:03"^^xsd:dateTime ,
+                                                                   "Jan Sawicki"^^xsd:string ;
+                                                        dc:dateAccepted "2020-01-28T20:00:00"^^xsd:dateTime ;
+                                                        dc:dateSubmitted "2020-01-21T16:00:00"^^xsd:dateTime ;
+                                                        dc:description "The Computer Games Ontology is dedicated to solving the problem of finding games by their similarities. That means it is created to serve anyone who looks for a game and knows only their partial or full requirement but not the title itself."^^xsd:string ;
+                                                        dc:language "English"^^xsd:anyURI ;
+                                                        dc:license "MIT"^^xsd:string ,
+                                                                   "https://github.com/JanSawicki/cgo"^^xsd:anyURI ;
+                                                        vann:preferredNamespaceUri "http://www.semanticweb.org/jansawicki/ontologies/cgo/1.0.0" ;
+                                                        vann1:preferredNamespacePrefix "cgo" ;
+                                                        owl:versionInfo "The first release of Computer Games Ontology"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+<http://purl.org/dc/elements/1.1/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/dateAccepted
+<http://purl.org/dc/elements/1.1/dateAccepted> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/dateSubmitted
+<http://purl.org/dc/elements/1.1/dateSubmitted> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/references
+<http://purl.org/dc/elements/1.1/references> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#dateAccepted
+dc:dateAccepted rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#dateSubmitted
+dc:dateSubmitted rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#license
+dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+terms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann#preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty ;
+                           rdfs:subPropertyOf vann:preferredNamespaceUri .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann1:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasAbbreviation
+cgo:hasAbbreviation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cgo:isRelatedTo ;
+                    owl:inverseOf cgo:isAbbreviationOf ;
+                    rdfs:domain cgo:Name ;
+                    rdfs:range cgo:Abbreviation ;
+                    rdfs:comment "The property hasAbbreviation is functional because any Name can have only one Abbreviation to avoid confusion." ,
+                                 "The property hasAbbreviation is inverse functional because any Abbreviation can have only one Name to avoid confusion." ;
+                    rdfs:seeAlso cgo:Abbreviation ,
+                                 cgo:Name .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasActionTime
+cgo:hasActionTime rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cgo:isRelatedTo ;
+                  owl:inverseOf cgo:isActionTimeOf ;
+                  rdfs:domain cgo:Game ;
+                  rdfs:range cgo:ActionTime ;
+                  rdfs:seeAlso cgo:ActionTime ,
+                               cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasActor
+cgo:hasActor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cgo:isRelatedTo ;
+             owl:inverseOf cgo:isActorOf ;
+             rdfs:domain cgo:Movie ;
+             rdfs:range cgo:Actor ;
+             rdfs:seeAlso cgo:Actor ,
+                          cgo:Movie .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasArtPiece
+cgo:hasArtPiece rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isArtPieceOf ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( cgo:Game
+                                            cgo:Lore
+                                          )
+                            ] ;
+                rdfs:range cgo:ArtPiece ;
+                rdfs:seeAlso cgo:ArtPiece ,
+                             cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasAuthor
+cgo:hasAuthor rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty cgo:hasDirector ,
+                                     cgo:hasWriter ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              owl:inverseOf cgo:isAuthorOf ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( cgo:ArtPiece
+                                          cgo:Lore
+                                        )
+                          ] ;
+              rdfs:range cgo:Author ;
+              rdfs:seeAlso cgo:ArtPiece ,
+                           cgo:Author ,
+                           cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCountry
+cgo:hasCountry rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cgo:isRelatedTo ;
+               owl:inverseOf cgo:isCountryOf ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( cgo:Company
+                                           cgo:RatingSystem
+                                         )
+                           ] ;
+               rdfs:range cgo:Country ;
+               rdfs:comment "Descrbies if a Company is originating from a Country or if a RatingSystem is used in a Country." ;
+               rdfs:seeAlso cgo:Company ,
+                            cgo:Country ,
+                            cgo:RatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasDeveloper
+cgo:hasDeveloper rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 owl:inverseOf cgo:isDeveloperOf ;
+                 rdfs:domain cgo:Game ;
+                 rdfs:range cgo:Company ;
+                 rdfs:seeAlso cgo:Company ,
+                              cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasDirector
+cgo:hasDirector rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isDirectorOf ;
+                rdfs:domain cgo:Movie ;
+                rdfs:range cgo:Director ;
+                rdfs:seeAlso cgo:Director ,
+                             cgo:Movie .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasDistributor
+cgo:hasDistributor rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cgo:isRelatedTo ;
+                   owl:inverseOf cgo:isDistributorOf ;
+                   rdfs:domain cgo:Game ;
+                   rdfs:range cgo:Company ;
+                   rdfs:seeAlso cgo:Company ,
+                                cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasEsporter
+cgo:hasEsporter rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isEsporterOf ;
+                rdfs:domain cgo:Tournament ;
+                rdfs:range cgo:Esporter ;
+                rdfs:seeAlso cgo:Esporter ,
+                             cgo:Tournament .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasEvent
+cgo:hasEvent rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cgo:isRelatedTo ;
+             owl:inverseOf cgo:isEventOf ;
+             rdfs:domain cgo:Game ;
+             rdfs:range cgo:Event ;
+             rdfs:seeAlso cgo:Event ,
+                          cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasGameSeries
+cgo:hasGameSeries rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cgo:isRelatedTo ;
+                  owl:inverseOf cgo:isGameSeriesOf ;
+                  rdfs:domain cgo:GameSeries ;
+                  rdfs:range cgo:Game ;
+                  rdfs:seeAlso cgo:Game ,
+                               cgo:GameSeries .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasGenre
+cgo:hasGenre rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cgo:isRelatedTo ;
+             owl:inverseOf cgo:isGenreOf ;
+             rdfs:domain cgo:Game ;
+             rdfs:range cgo:Genre ;
+             rdfs:seeAlso cgo:Game ,
+                          cgo:Genre .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasInfuencer
+cgo:hasInfuencer rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 owl:inverseOf cgo:isInfluencerOf ;
+                 rdfs:domain cgo:SocialMediaChannel ;
+                 rdfs:range cgo:Influencer ;
+                 rdfs:seeAlso cgo:Influencer ,
+                              cgo:SocialMediaChannel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasLanguage
+cgo:hasLanguage rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                rdfs:domain cgo:Game ;
+                rdfs:range cgo:Language ;
+                rdfs:seeAlso cgo:Game ,
+                             cgo:Language .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasLauncher
+cgo:hasLauncher rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isLauncherOf ;
+                rdfs:domain cgo:Game ;
+                rdfs:range cgo:Launcher ;
+                rdfs:seeAlso cgo:Game ,
+                             cgo:Launcher .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasLore
+cgo:hasLore rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf cgo:isRelatedTo ;
+            owl:inverseOf cgo:isLoreOf ;
+            rdfs:domain cgo:Game ;
+            rdfs:range cgo:Lore ;
+            rdfs:seeAlso cgo:Game ,
+                         cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMod
+cgo:hasMod rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf cgo:isRelatedTo ;
+           owl:inverseOf cgo:isModOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( cgo:Game
+                                       cgo:Mod
+                                     )
+                       ] ;
+           rdfs:range cgo:Mod ;
+           rdfs:comment "The relation is transitive, because a Mod may have a different mod based on it." ;
+           rdfs:seeAlso cgo:isModOf .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMusician
+cgo:hasMusician rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isMusicianOf ;
+                rdfs:domain cgo:Music ;
+                rdfs:range cgo:Musician .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasName
+cgo:hasName rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf cgo:isRelatedTo ;
+            owl:inverseOf cgo:isNameOf ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:InverseFunctionalProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range cgo:Name ;
+            rdfs:seeAlso cgo:Name ,
+                         owl:Thing ,
+                         "A Name is unique, i.e. each Name is linked to exactly one owl:Thing and one owl:Thing has exactly one name." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasPaymentModel
+cgo:hasPaymentModel rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cgo:isRelatedTo ;
+                    owl:inverseOf cgo:isPaymentModel ;
+                    rdfs:domain cgo:Game ;
+                    rdfs:range cgo:PaymentModel ;
+                    rdfs:seeAlso cgo:Game ,
+                                 cgo:PaymentModel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasPlatform
+cgo:hasPlatform rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty cgo:requires ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isPlatformOf ;
+                rdfs:domain cgo:Game ;
+                rdfs:range cgo:Platform ;
+                rdfs:seeAlso cgo:Game ,
+                             cgo:Platform .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasProducer
+cgo:hasProducer rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isProducerOf ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( cgo:Game
+                                            cgo:Hardware
+                                            cgo:Software
+                                          )
+                            ] ;
+                rdfs:range cgo:Company ;
+                rdfs:seeAlso cgo:Company ,
+                             cgo:Game ,
+                             cgo:Hardware ,
+                             cgo:Software .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasPublisher
+cgo:hasPublisher rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 owl:inverseOf cgo:isPublisherOf ;
+                 rdfs:domain cgo:Game ;
+                 rdfs:range cgo:Company ;
+                 rdfs:seeAlso cgo:Company ,
+                              cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasRating
+cgo:hasRating rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              owl:inverseOf cgo:isRatingOf ;
+              rdfs:domain cgo:Game ;
+              rdfs:range cgo:Rating ;
+              rdfs:seeAlso cgo:Game ,
+                           cgo:Rating .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasRatingSystem
+cgo:hasRatingSystem rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cgo:isRelatedTo ;
+                    owl:inverseOf cgo:isRatingSystemOf ;
+                    rdfs:domain cgo:Rating ;
+                    rdfs:range cgo:RatingSystem ;
+                    rdfs:comment "Describes if a Rating is from a particular RatingSystem." ;
+                    rdfs:seeAlso cgo:Country ,
+                                 cgo:RatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasResource
+cgo:hasResource rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isResourceOf ;
+                rdfs:domain cgo:Game ;
+                rdfs:range cgo:Resource ;
+                rdfs:seeAlso cgo:Game ,
+                             cgo:Resource .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasReview
+cgo:hasReview rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              rdfs:domain cgo:Game ;
+              rdfs:range cgo:Review ;
+              rdfs:seeAlso cgo:Game ,
+                           cgo:Review .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSizeClassification
+cgo:hasSizeClassification rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf cgo:isRelatedTo ;
+                          owl:inverseOf cgo:isSizeClassificationOf ;
+                          rdfs:domain cgo:Game ;
+                          rdfs:range cgo:SizeClassification ;
+                          rdfs:seeAlso cgo:Game ,
+                                       cgo:SizeClassification .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSourceArtPiece
+cgo:hasSourceArtPiece rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf cgo:isRelatedTo ;
+                      owl:inverseOf cgo:isSourceArtPieceOf ;
+                      rdf:type owl:TransitiveProperty ;
+                      rdfs:domain cgo:ArtPiece ;
+                      rdfs:range cgo:ArtPiece ;
+                      rdfs:comment "Describes a relation when a relation has been a source (e.g. an inspiration) for a different art piece." ;
+                      rdfs:seeAlso cgo:ArtPiece .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasSubCompany
+cgo:hasSubCompany rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cgo:isRelatedTo ;
+                  owl:inverseOf cgo:isSubCompanyOf ;
+                  rdf:type owl:TransitiveProperty ;
+                  rdfs:domain cgo:Company ;
+                  rdfs:range cgo:Company ;
+                  rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasTimeSpan
+cgo:hasTimeSpan rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isTimeSpanOf ;
+                rdfs:domain cgo:Game ;
+                rdfs:range cgo:TimeSpan .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasWriter
+cgo:hasWriter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              owl:inverseOf cgo:isWriterOf ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( cgo:Movie
+                                          cgo:Text
+                                        )
+                          ] ;
+              rdfs:range cgo:Writer ;
+              rdfs:seeAlso cgo:Movie ,
+                           cgo:Text ,
+                           cgo:Writer .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isAbbreviationOf
+cgo:isAbbreviationOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cgo:isRelatedTo ;
+                     rdfs:domain cgo:Abbreviation ;
+                     rdfs:range cgo:Name ;
+                     rdfs:comment "The property isAbbreviationOf is functional because any Abbreviation can have only one Name to avoid confusion." ,
+                                  "The property isAbbreviationOf is inverse functional because any Name can have only one Abbreviation to avoid confusion." ;
+                     rdfs:seeAlso cgo:Abbreviation ,
+                                  cgo:Name .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isActionTimeOf
+cgo:isActionTimeOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cgo:isRelatedTo ;
+                   rdfs:domain cgo:ActionTime ;
+                   rdfs:range cgo:Game ;
+                   rdfs:seeAlso cgo:ActionTime ,
+                                cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isActorOf
+cgo:isActorOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              rdfs:domain cgo:Actor ;
+              rdfs:range cgo:Movie ;
+              rdfs:seeAlso cgo:Actor ,
+                           cgo:Movie .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isArtPieceOf
+cgo:isArtPieceOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:ArtPiece ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( cgo:Game
+                                            cgo:Lore
+                                          )
+                            ] ;
+                 rdfs:seeAlso cgo:ArtPiece ,
+                              cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isAuthorOf
+cgo:isAuthorOf rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty cgo:isDirectorOf ,
+                                      cgo:isWriterOf ;
+               rdfs:subPropertyOf cgo:isRelatedTo ;
+               rdfs:domain cgo:Person ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( cgo:ArtPiece
+                                          cgo:Lore
+                                        )
+                          ] ;
+               rdfs:seeAlso cgo:ArtPiece ,
+                            cgo:Lore ,
+                            cgo:Person .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isCountryOf
+cgo:isCountryOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                rdfs:domain cgo:Country ;
+                rdfs:range cgo:Company ;
+                rdfs:seeAlso cgo:Company ,
+                             cgo:Country .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isDeveloperOf
+cgo:isDeveloperOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cgo:isRelatedTo ;
+                  rdfs:domain cgo:Company ;
+                  rdfs:range cgo:Game ;
+                  rdfs:seeAlso cgo:Company ,
+                               cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isDirectorOf
+cgo:isDirectorOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Director ;
+                 rdfs:range cgo:Movie ;
+                 rdfs:seeAlso cgo:Director ,
+                              cgo:Movie .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isDistributorOf
+cgo:isDistributorOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cgo:isRelatedTo ;
+                    rdfs:domain cgo:Company ;
+                    rdfs:range cgo:Game ;
+                    rdfs:seeAlso cgo:Company ,
+                                 cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isEsporterOf
+cgo:isEsporterOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Esporter ;
+                 rdfs:range cgo:Tournament ;
+                 rdfs:seeAlso cgo:Esporter ,
+                              cgo:Tournament .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isEventOf
+cgo:isEventOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              rdfs:domain cgo:Event ;
+              rdfs:range cgo:Game ;
+              rdfs:seeAlso cgo:Event ,
+                           cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isGameSeriesOf
+cgo:isGameSeriesOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cgo:isRelatedTo ;
+                   rdfs:domain cgo:GameSeries ;
+                   rdfs:range cgo:Game ;
+                   rdfs:seeAlso cgo:Game ,
+                                cgo:GameSeries .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isGenreOf
+cgo:isGenreOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cgo:isRelatedTo ;
+              rdfs:domain cgo:Genre ;
+              rdfs:range cgo:Game ;
+              rdfs:seeAlso cgo:Game ,
+                           cgo:Genre .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isInfluencerOf
+cgo:isInfluencerOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cgo:isRelatedTo ;
+                   rdfs:domain cgo:Influencer ;
+                   rdfs:range cgo:SocialMediaChannel ;
+                   rdfs:seeAlso cgo:Influencer ,
+                                cgo:SocialMediaChannel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isLauncherOf
+cgo:isLauncherOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Launcher ;
+                 rdfs:range cgo:Game ;
+                 rdfs:seeAlso cgo:Game ,
+                              cgo:Launcher .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isLoreOf
+cgo:isLoreOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cgo:isRelatedTo ;
+             rdfs:domain cgo:Lore ;
+             rdfs:range cgo:Game ;
+             rdfs:seeAlso cgo:Game ,
+                          cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isModOf
+cgo:isModOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf cgo:isRelatedTo ;
+            rdfs:domain cgo:Mod ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( cgo:Game
+                                       cgo:Mod
+                                     )
+                       ] ;
+            rdfs:comment "A Mod can be a Mod of a Game or an extension of another Mod." ;
+            rdfs:seeAlso cgo:hasMod .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isMusicianOf
+cgo:isMusicianOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Musician ;
+                 rdfs:range cgo:Music .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isNameOf
+cgo:isNameOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cgo:isRelatedTo ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:InverseFunctionalProperty ;
+             rdfs:domain cgo:Name ;
+             rdfs:range owl:Thing ;
+             rdfs:seeAlso cgo:Name ,
+                          cgo:hasName ,
+                          owl:Thing .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isPaymentModel
+cgo:isPaymentModel rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cgo:isRelatedTo ;
+                   rdfs:domain cgo:PaymentModel ;
+                   rdfs:range cgo:Game ;
+                   rdfs:comment "Describes the relation of a PaymentModel (domain) and Game (range)." ;
+                   rdfs:seeAlso cgo:Game ,
+                                cgo:PaymentModel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isPlatformOf
+cgo:isPlatformOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Platform ;
+                 rdfs:range cgo:Game ;
+                 rdfs:seeAlso cgo:Game ,
+                              cgo:Platform .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isPrequelOf
+cgo:isPrequelOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cgo:isRelatedTo ;
+                owl:inverseOf cgo:isSequelOf ;
+                rdf:type owl:TransitiveProperty ;
+                rdfs:domain cgo:Game ;
+                rdfs:range cgo:Game ;
+                rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isProducerOf
+cgo:isProducerOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Company ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( cgo:Game
+                                            cgo:Hardware
+                                            cgo:Software
+                                          )
+                            ] ;
+                 rdfs:seeAlso cgo:Company ,
+                              cgo:Game ,
+                              cgo:Hardware ,
+                              cgo:Software .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isPublisherOf
+cgo:isPublisherOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cgo:isRelatedTo ;
+                  rdfs:domain cgo:Publisher ;
+                  rdfs:range cgo:Game ;
+                  rdfs:seeAlso cgo:Game ,
+                               cgo:Publisher .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isRatingOf
+cgo:isRatingOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cgo:isRelatedTo ;
+               rdfs:domain cgo:Rating ;
+               rdfs:range cgo:Game ;
+               rdfs:seeAlso cgo:Game ,
+                            cgo:Rating .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isRatingSystemOf
+cgo:isRatingSystemOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cgo:isRelatedTo ;
+                     rdfs:domain cgo:RatingSystem ;
+                     rdfs:range cgo:Rating ;
+                     rdfs:seeAlso cgo:Country ,
+                                  cgo:RatingSystem ,
+                                  cgo:hasRatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isRelatedTo
+cgo:isRelatedTo rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf cgo:isRelatedTo ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:ReflexiveProperty ;
+                rdfs:domain owl:Thing ;
+                rdfs:range owl:Thing ;
+                rdfs:comment "The property isRealtedTo is not transitive to not cause a avalanche of relations between everything and everything." ;
+                rdfs:seeAlso owl:Thing .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isRequiredFor
+cgo:isRequiredFor rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cgo:isRelatedTo ;
+                  rdf:type owl:TransitiveProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( cgo:Hardware
+                                              cgo:Software
+                                            )
+                              ] ;
+                  rdfs:range cgo:Game ;
+                  rdfs:seeAlso cgo:Game ,
+                               cgo:Hardware ,
+                               cgo:Software .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isResourceOf
+cgo:isResourceOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:Resource ;
+                 rdfs:range cgo:Game ;
+                 rdfs:seeAlso cgo:Game ,
+                              cgo:Resource .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isReviewOf
+cgo:isReviewOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cgo:isRelatedTo ;
+               rdfs:domain cgo:Review ;
+               rdfs:range cgo:Game ;
+               rdfs:seeAlso cgo:Game ,
+                            cgo:Review .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isSequelOf
+cgo:isSequelOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cgo:isRelatedTo ;
+               rdf:type owl:TransitiveProperty ;
+               rdfs:domain cgo:Game ;
+               rdfs:range cgo:Game ;
+               rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isSizeClassificationOf
+cgo:isSizeClassificationOf rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf cgo:isRelatedTo ;
+                           rdfs:domain cgo:SizeClassification ;
+                           rdfs:range cgo:Game ;
+                           rdfs:seeAlso cgo:SizeClassification ;
+                           owl:incompatibleWith cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isSourceArtPieceOf
+cgo:isSourceArtPieceOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cgo:isRelatedTo ;
+                       rdfs:domain cgo:ArtPiece ;
+                       rdfs:range cgo:ArtPiece ;
+                       rdfs:seeAlso cgo:ArtPiece ,
+                                    cgo:hasSourceArtPiece .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isSubCompanyOf
+cgo:isSubCompanyOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cgo:isRelatedTo ;
+                   rdfs:domain cgo:Company ;
+                   rdfs:range cgo:Company ;
+                   rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isTimeSpanOf
+cgo:isTimeSpanOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cgo:isRelatedTo ;
+                 rdfs:domain cgo:TimeSpan ;
+                 rdfs:range cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#isWriterOf
+cgo:isWriterOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cgo:isRelatedTo ;
+               rdfs:domain cgo:Writer ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( cgo:Movie
+                                          cgo:Text
+                                        )
+                          ] ;
+               rdfs:seeAlso cgo:Movie ,
+                            cgo:Text ,
+                            cgo:Writer .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requires
+cgo:requires rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cgo:isRelatedTo ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( cgo:Game
+                                         cgo:Hardware
+                                         cgo:Software
+                                       )
+                         ] ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( cgo:Hardware
+                                        cgo:Software
+                                      )
+                        ] ;
+             rdfs:comment "Describes what particular (keyword) Software or Hardwre is required by a Game, a Software or Hardware." ,
+                          """Note that if a Game requires a few individuals in some category (of some class) it is understood as \"one of\" or logical OR. 
+e.g. A Game has two properties: \"requires processor A\" and \"requires processor B\". It means that it requires either processor A or processor B.""" ,
+                          """Note that this property is similar to Data properties starting with \"requires...\", but those properties describe if any type of something (e.g. Keyboard) is required to play. 
+The object property \"requires\" links a Game to a particular type of Software/Hardware.""" ,
+                          "Note that this property is transitive because if Software A requires Software B and Software B requires Hardware C, then Software A requires Hardware C too." ;
+             rdfs:seeAlso cgo:Game ,
+                          cgo:Hardware ,
+                          cgo:Software .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hadLastChangeOn
+cgo:hadLastChangeOn rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf cgo:happened ;
+                    rdfs:domain cgo:Game ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:comment "A \"change\" can be a patch, a DLC, an extension etc." ,
+                                 "Describes when the last change has been introduced to the game." ;
+                    rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hadSupportCancelled
+cgo:hadSupportCancelled rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf cgo:happened ;
+                        rdfs:domain cgo:Game ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Describes when the support for a game has been discontinued." ;
+                        rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#happened
+cgo:happened rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( cgo:Event
+                                         cgo:Game
+                                       )
+                         ] ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "Describes when something happened." ;
+             rdfs:seeAlso cgo:Event ,
+                          cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasAddress
+cgo:hasAddress rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain cgo:Resource ;
+               rdfs:range xsd:anyURI ;
+               rdfs:comment "Describes the address or any relative link to a Resource." ;
+               rdfs:seeAlso cgo:Resource .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasCooperativeMode
+cgo:hasCooperativeMode rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain cgo:Game ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "Indicates if a Game has a cooperative mode, i.e. a multiplayer option where players play together vs the computer."^^xsd:string ,
+                                    "Note that this property is not for e.g. team multiplayer games where players play together vs other players. It is dedicated for PvE (Player vs Environment), where players can play together vs the computer."^^xsd:string ;
+                       rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasGameplayTime
+cgo:hasGameplayTime rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain cgo:Game ;
+                    rdfs:range xsd:int ;
+                    rdfs:comment "Descibes the average time of finishing a Game." ,
+                                 "Time is given in hours." ;
+                    rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasMinimumAge
+cgo:hasMinimumAge rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain cgo:Game ;
+                  rdfs:range xsd:unsignedShort ;
+                  rdfs:comment "Describes the recommended minimum age for a player to play the game." ,
+                               """The recomended age is not the legal age to play something (e.g. not a \"18+\" restriction). It is the age at which a person should be able to play the game. 
+E.g.: an 3-year-old child will not understand how to play a intense strategy based think-ahead chess-type of game.""" ;
+                  rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasPrizePool
+cgo:hasPrizePool rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain cgo:Tournament ;
+                 rdfs:range xsd:unsignedLong ;
+                 rdfs:comment "Describes to overall prize pool for a Tournament."^^xsd:string ,
+                              "The amount should be in USD."^^xsd:string ;
+                 rdfs:seeAlso cgo:Tournament .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasReason
+cgo:hasReason rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Describes a reason for an event (e.g. a game not being developed or published)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasReviewAbstract
+cgo:hasReviewAbstract rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain cgo:Review ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Describes a short form Review (e.g.: a single comment)." ,
+                                   "Note that when adding review abstract, add it as a whole. For long profesional reviews use hasReviewContent."^^xsd:string ;
+                      rdfs:seeAlso cgo:Review .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasReviewContent
+cgo:hasReviewContent rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cgo:Review ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Describes the whole (long) content of the Review." ,
+                                  "Note that when adding review contents, add it as a whole for abstracts or single opinions use hasReviewAbstract."^^xsd:string ,
+                                  "Used for professional long reviews by critics/portals."^^xsd:string ;
+                     rdfs:seeAlso cgo:Review .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#hasReviewSource
+cgo:hasReviewSource rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain cgo:Review ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:comment "Describes the source of a Review."^^xsd:string ,
+                                 "e.g.: a link to a website or game portal."^^xsd:string ;
+                    rdfs:seeAlso cgo:Review .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresController
+cgo:requiresController rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain cgo:Game ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "Describes if a Game requires a Controller."^^xsd:string ;
+                       rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresInternet
+cgo:requiresInternet rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cgo:Game ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:comment "Indicates if a Game requires a Internet connection."^^xsd:string ,
+                                  "Note that some single player games may also require an Internet connection to work."^^xsd:string ;
+                     rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresKeyboard
+cgo:requiresKeyboard rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cgo:Game ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:comment "Describes if a Game requires a Keyboard."^^xsd:string ;
+                     rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresMicrophone
+cgo:requiresMicrophone rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain cgo:Game ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "Describes if a Game requires a Microphone."^^xsd:string ;
+                       rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresMouse
+cgo:requiresMouse rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain cgo:Game ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Describes if a Game requires a Mouse."^^xsd:string ;
+                  rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresRam
+cgo:requiresRam rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain cgo:Game ;
+                rdfs:range xsd:unsignedInt ;
+                rdfs:comment "Describes how much RAM a Game requires."^^xsd:string ;
+                rdfs:seeAlso cgo:Game ,
+                             "Given in MB (MegaBytes)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresSpeakers
+cgo:requiresSpeakers rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cgo:Game ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:comment "Indicates if a Game requires a Speakers."^^xsd:string ,
+                                  "Note that most of the nowadays games require some sort of audio output. This relation is dedicated to the older games." ;
+                     rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#requiresVideoRam
+cgo:requiresVideoRam rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cgo:Game ;
+                     rdfs:range xsd:unsignedInt ;
+                     rdfs:comment "Describes how much VRAM a Game requires."^^xsd:string ;
+                     rdfs:seeAlso cgo:Game ,
+                                  "Given in MB (MegaBytes)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#runsInFramerate
+cgo:runsInFramerate rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain cgo:Game ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Describes the maximal framerate of a game." ;
+                    rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#runsInResolution
+cgo:runsInResolution rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cgo:Game ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Describes the maximal screen resolution of a game." ;
+                     rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#wasAnnouncedOn
+cgo:wasAnnouncedOn rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cgo:happened ;
+                   rdfs:domain cgo:Game ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Described the time when a game was first announced." ;
+                   rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#wasCancelledOn
+cgo:wasCancelledOn rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cgo:happened ;
+                   rdfs:domain cgo:Game ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Describes the date when a game was cancelled." ;
+                   rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#wasFunded
+cgo:wasFunded rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf cgo:happened ;
+              rdfs:domain cgo:Company ;
+              rdfs:range xsd:dateTime ;
+              rdfs:comment "A relation describing when a company was funded." ;
+              rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#wasRealeased
+cgo:wasRealeased rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf cgo:happened ;
+                 rdfs:domain cgo:Game ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:comment "A relation describin when a game has been realeased." ,
+                              "The date of the game publishing does not have to be exact (e.g. only year is acceptable)" ,
+                              "There are no relation like wasDistributed or wasDeveloped, because development and distribution is usually a process not a single event. Also the finish time of development and start time of distribution is usually nearly precisely the time of publishing." ;
+                 rdfs:seeAlso cgo:Game .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Actor
+<http://dbpedia.org/ontology/Actor> rdf:type owl:Class ;
+                                    owl:equivalentClass cgo:Actor .
+
+
+###  http://dbpedia.org/ontology/Artwork
+<http://dbpedia.org/ontology/Artwork> rdf:type owl:Class ;
+                                      owl:equivalentClass cgo:ArtPiece .
+
+
+###  http://dbpedia.org/ontology/Company
+<http://dbpedia.org/ontology/Company> rdf:type owl:Class ;
+                                      owl:equivalentClass cgo:Company .
+
+
+###  http://dbpedia.org/ontology/Country
+<http://dbpedia.org/ontology/Country> rdf:type owl:Class ;
+                                      owl:equivalentClass cgo:Country .
+
+
+###  http://dbpedia.org/ontology/Event
+<http://dbpedia.org/ontology/Event> rdf:type owl:Class ;
+                                    owl:equivalentClass cgo:Event .
+
+
+###  http://dbpedia.org/ontology/Film
+<http://dbpedia.org/ontology/Film> rdf:type owl:Class ;
+                                   owl:equivalentClass cgo:Movie .
+
+
+###  http://dbpedia.org/ontology/Genre
+<http://dbpedia.org/ontology/Genre> rdf:type owl:Class ;
+                                    owl:equivalentClass cgo:Genre .
+
+
+###  http://dbpedia.org/ontology/Language
+<http://dbpedia.org/ontology/Language> rdf:type owl:Class ;
+                                       owl:equivalentClass cgo:Language .
+
+
+###  http://dbpedia.org/ontology/MusicalWork
+<http://dbpedia.org/ontology/MusicalWork> rdf:type owl:Class ;
+                                          owl:equivalentClass cgo:Music .
+
+
+###  http://dbpedia.org/ontology/Name
+<http://dbpedia.org/ontology/Name> rdf:type owl:Class ;
+                                   owl:equivalentClass cgo:Name .
+
+
+###  http://dbpedia.org/ontology/Person
+<http://dbpedia.org/ontology/Person> rdf:type owl:Class ;
+                                     owl:equivalentClass cgo:Person .
+
+
+###  http://dbpedia.org/ontology/Software
+<http://dbpedia.org/ontology/Software> rdf:type owl:Class ;
+                                       owl:equivalentClass cgo:Software .
+
+
+###  http://dbpedia.org/ontology/VideoGame
+<http://dbpedia.org/ontology/VideoGame> rdf:type owl:Class ;
+                                        owl:equivalentClass cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Abbreviation
+cgo:Abbreviation rdf:type owl:Class ;
+                 rdfs:comment "An abberviation has to be an abbreviation of something. Otherwise it does not exist." ,
+                              "An abbreviation of a name." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Action
+cgo:Action rdf:type owl:Class ;
+           rdfs:subClassOf cgo:Genre ;
+           rdfs:comment "e.g. first person shooters, horrors" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ActionTime
+cgo:ActionTime rdf:type owl:Class ;
+               rdfs:comment "ActionTime can be attributed to both a game (directly) or to a particular lore." ,
+                            "The time period where the action of the game takes place." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor
+cgo:Actor rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty cgo:isActorOf ;
+                                                       owl:someValuesFrom cgo:Movie
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf cgo:Person ;
+          rdfs:comment cgo:Person ,
+                       "A person that stars in movies." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#AdvancedLore
+cgo:AdvancedLore rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( cgo:Lore
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty cgo:hasArtPiece ;
+                                                              owl:minQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass cgo:ArtPiece
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf cgo:Lore ;
+                 rdfs:comment "A subjective definition of lore that is advanced." ,
+                              "An AdvancedLore has minimum 5 related ArtPieces." ;
+                 rdfs:seeAlso cgo:SimpleLore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Adventure
+cgo:Adventure rdf:type owl:Class ;
+              rdfs:subClassOf cgo:Genre ;
+              rdfs:comment "e.g. text adventures" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Android
+cgo:Android rdf:type owl:Class ;
+            rdfs:subClassOf cgo:MobileOperatingSystem ;
+            rdfs:comment "A distribution of Android (mobile operating system)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ArtPiece
+cgo:ArtPiece rdf:type owl:Class ;
+             rdfs:comment "A piece of art that may somehow be related to a game." ,
+                          "Piece of art may not have an Author (e.g. Author is unknown)." ,
+                          "PieceOfArt may have many authors (e.g. Movies)" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#AudioDevice
+cgo:AudioDevice rdf:type owl:Class ;
+                rdfs:subClassOf cgo:InputDevice ,
+                                cgo:OutputDevice ;
+                rdfs:comment "A device outputing audio." ,
+                             "E.g. headphones, speakers." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Author
+cgo:Author rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty cgo:isRelatedTo ;
+                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass cgo:ArtPiece
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf cgo:Person ;
+           rdfs:comment "An author of something." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#CPU
+cgo:CPU rdf:type owl:Class ;
+        rdfs:subClassOf cgo:Console ,
+                        cgo:Hardware ;
+        rdfs:comment "A central processing unit." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Company
+cgo:Company rdf:type owl:Class ;
+            rdfs:comment "A Company may be related (exist) in many countries." ,
+                         "A company related to games." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerGame
+cgo:ComputerGame rdf:type owl:Class ;
+                 rdfs:subClassOf cgo:Game ;
+                 rdfs:comment "A Game that is distributed for a Computer." ,
+                              """Determining wheather a Game is a ComputerGame depends if it runs on an OperatingSystem which is a ComputerOperatingSystem. 
+This logic is different for ConsoleGame.""" ;
+                 rdfs:seeAlso cgo:ComputerOperatingSystem ,
+                              cgo:ConsoleGame ,
+                              cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ComputerOperatingSystem
+cgo:ComputerOperatingSystem rdf:type owl:Class ;
+                            rdfs:subClassOf cgo:OperatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Console
+cgo:Console rdf:type owl:Class ;
+            rdfs:subClassOf cgo:Platform ;
+            rdfs:comment "A console dedicated to gaming." ,
+                         "E.g. PlayStation, XBox." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ConsoleGame
+cgo:ConsoleGame rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( cgo:Game
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty cgo:hasPlatform ;
+                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass cgo:Console
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf cgo:Game ;
+                rdfs:comment "A Game that is distributed for a Console." ,
+                             """Determining wheather a Game is a ConsoleGame depends if it has a Platform which is a Console.
+This logic is different for ComputerGame and MobileGame.""" ;
+                rdfs:seeAlso cgo:ComputerGame ,
+                             cgo:Console ,
+                             cgo:Game ,
+                             cgo:MobileGame .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Convention
+cgo:Convention rdf:type owl:Class ;
+               rdfs:subClassOf cgo:Event ;
+               rdfs:comment "A convention related to a Game." ;
+               rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Country
+cgo:Country rdf:type owl:Class ;
+            rdfs:comment "A country." ,
+                         """This could be replaced with an object property. However, to avoid confusion, it is advised to used a class.
+
+\"Confusion\", e.g. \"Germany\" vs \"Federal Republic of Germany\".""" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Developer
+cgo:Developer rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( cgo:Company
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty cgo:isDeveloperOf ;
+                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass cgo:Game
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf cgo:Company ;
+              rdfs:comment "A company that is creating (developing) games." ;
+              rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Difficulty
+cgo:Difficulty rdf:type owl:Class ;
+               rdfs:comment "A Game difficulty." ,
+                            "When adding Difficulty instances note that they should have explanations and Game references (e.g.: \"difficult\" as Dark Souls, \"easy\" as Candy Crash)." ;
+               rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Director
+cgo:Director rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty cgo:isDirectorOf ;
+                                                          owl:someValuesFrom cgo:Movie
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf cgo:Person ;
+             rdfs:comment cgo:Person ,
+                          "A person who directs movies." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Distributor
+cgo:Distributor rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( cgo:Company
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty cgo:isDistributorOf ;
+                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass cgo:Game
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf cgo:Company ;
+                rdfs:comment "A company that distributes (sells) games." ;
+                rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Driver
+cgo:Driver rdf:type owl:Class ;
+           rdfs:subClassOf cgo:Software ;
+           rdfs:comment "A computer driver." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Educational
+cgo:Educational rdf:type owl:Class ;
+                rdfs:subClassOf cgo:Genre ;
+                rdfs:seeAlso "e.g. discovery games, learning games" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#EsportGame
+cgo:EsportGame rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( cgo:Game
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty cgo:hasEvent ;
+                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass cgo:Tournament
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf cgo:Game ;
+               rdfs:comment "A Game that has at least one tournament/championship/other competetive event." ;
+               rdfs:seeAlso cgo:Game ,
+                            cgo:Tournament .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Esporter
+cgo:Esporter rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty cgo:isEsporterOf ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass cgo:Tournament
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf cgo:Person ;
+             rdfs:comment "A Person playing EsportGames (i,e, playing Games competetively)." ,
+                          "It is enough for a person to play one EsportGame (i.e. play in a single Tournament) to be a Esporter." ,
+                          "This class may also be called \"Player\", but it would be too confusing, becuase everyone that plays games can be called a \"player\"." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Event
+cgo:Event rdf:type owl:Class ;
+          rdfs:comment "An event of any kind." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#FirstPerson
+cgo:FirstPerson rdf:type owl:Class ;
+                rdfs:subClassOf cgo:Genre ;
+                rdfs:comment "Describes Games which are played from the first person perspective." ,
+                             "e.g. first person shooter" ;
+                rdfs:seeAlso cgo:ThirdPerson .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#GPU
+cgo:GPU rdf:type owl:Class ;
+        rdfs:subClassOf cgo:Console ,
+                        cgo:Hardware ;
+        rdfs:comment "A graphics processing unit." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Game
+cgo:Game rdf:type owl:Class ;
+         owl:equivalentClass cgo:VideoGame ;
+         rdfs:comment "A Game has to have a distinct name." ,
+                      "A Game may have many Platforms (e.g. it can be distributed for computers and consoles)." ,
+                      "A Game should be treated as a title, not a computer program." ,
+                      "A game can have multiple developers." ,
+                      "A game can have multiple distributors." ,
+                      "A game can have multiple publishers." ,
+                      """A game comes to life in three steps:
+- development
+- publishing
+- distribution""" ,
+                      "A game may have multiple Universes (cross-overs etc.)" ,
+                      "The central point of the whole ontology." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#GameSeries
+cgo:GameSeries rdf:type owl:Class ;
+               rdfs:comment "A series of Games, which consists of at least two Games that are related (represent two Game titles)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Genre
+cgo:Genre rdf:type owl:Class ;
+          rdfs:comment "A genre that can be attributed to a game." ,
+                       "All genere super groups are not disjoined because a Game can be of many generes." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Hardware
+cgo:Hardware rdf:type owl:Class ;
+             rdfs:comment "A physical device." ,
+                          "None of the Hardware subclasses are disjoined because there exists integrated device that are, for example, both input and output." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#IOS
+cgo:IOS rdf:type owl:Class ;
+        rdfs:subClassOf cgo:MobileOperatingSystem ;
+        rdfs:comment "A distribution of IOS (mobile operating system)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer
+cgo:Influencer rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty cgo:isInfluencerOf ;
+                                                            owl:someValuesFrom cgo:SocialMediaChannel
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf cgo:Person ;
+               rdfs:comment cgo:Person ,
+                            "A person using some social media channel to provide content for their followers." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#InputDevice
+cgo:InputDevice rdf:type owl:Class ;
+                rdfs:subClassOf cgo:Hardware ;
+                rdfs:comment "A hardware device which inputs some information." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Language
+cgo:Language rdf:type owl:Class ;
+             rdfs:comment "A languge that a game is provided in." ;
+             rdfs:seeAlso """This could be replaced with an object property. However, to avoid confusion, it is advised to used a class.
+
+\"Confusion\", e.g. \"english\" vs \"English\" vs \"american english\".""" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Launcher
+cgo:Launcher rdf:type owl:Class ;
+             rdfs:subClassOf cgo:Software ;
+             rdfs:comment "A launcher/client used to run a game."^^xsd:string ,
+                          "e.g. Steam, Origin"^^xsd:string .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Lore
+cgo:Lore rdf:type owl:Class ;
+         rdfs:comment "A backstory created around a fictional world." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Macintosh
+cgo:Macintosh rdf:type owl:Class ;
+              rdfs:subClassOf cgo:ComputerOperatingSystem ;
+              rdfs:comment "A distribution of Macintosh Operating System (macOS)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Meme
+cgo:Meme rdf:type owl:Class ;
+         rdfs:subClassOf cgo:ArtPiece ;
+         rdfs:comment "A meme has no creator nor author. It is a common wealth." ,
+                      "An element of a culture passed from one individual to another with digial means." ;
+         rdfs:seeAlso cgo:ArtPiece .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Mobile
+cgo:Mobile rdf:type owl:Class ;
+           rdfs:subClassOf cgo:Platform .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileGame
+cgo:MobileGame rdf:type owl:Class ;
+               rdfs:subClassOf cgo:Game ;
+               rdfs:comment "A Game that is distributed for mobile platform." ,
+                            """Determining wheather a Game is a ComputerGame depends if it runs on an OperatingSystem which is a MobileOperatingSystem. 
+This logic is different for ConsoleGame.""" ;
+               rdfs:seeAlso cgo:ConsoleGame ,
+                            cgo:Game ,
+                            cgo:MobileOperatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#MobileOperatingSystem
+cgo:MobileOperatingSystem rdf:type owl:Class ;
+                          rdfs:subClassOf cgo:OperatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Mod
+cgo:Mod rdf:type owl:Class ;
+        rdfs:comment "A modification for a Game." ;
+        rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Movie
+cgo:Movie rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( cgo:ArtPiece
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty cgo:hasActor ;
+                                                       owl:someValuesFrom cgo:Actor
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty cgo:hasDirector ;
+                                                       owl:someValuesFrom cgo:Director
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf cgo:ArtPiece ;
+          rdfs:comment "A movie (may also mean e.g. a short film, a cartoon, a TV series)." ,
+                       "A movie can also be understood as its script (text)." ;
+          rdfs:seeAlso cgo:ArtPiece .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Music
+cgo:Music rdf:type owl:Class ;
+          rdfs:subClassOf cgo:ArtPiece ;
+          rdfs:comment "A piece of music (e.g. a song)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Musical
+cgo:Musical rdf:type owl:Class ;
+            rdfs:subClassOf cgo:Genre ;
+            rdfs:seeAlso "e.g. singing games, instrument playing games" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Musician
+cgo:Musician rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty cgo:hasArtPiece ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass cgo:Music
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf cgo:Person .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Name
+cgo:Name rdf:type owl:Class ;
+         rdfs:comment "A name may have many abbreviations." ,
+                      "A name of a thing." ,
+                      "Any owl:Thing may have a name." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#OperatingSystem
+cgo:OperatingSystem rdf:type owl:Class ;
+                    rdfs:subClassOf cgo:Software ;
+                    rdfs:comment "An Operating System run on a computer." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#OutputDevice
+cgo:OutputDevice rdf:type owl:Class ;
+                 rdfs:subClassOf cgo:Hardware ;
+                 rdfs:comment "A hardware devices which outputs some information." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#PaymentModel
+cgo:PaymentModel rdf:type owl:Class ;
+                 rdfs:comment "A game may have many payment models." ,
+                              "A way of paying for the game content." ,
+                              "e.g. micro transaction, freemium, subscription" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Person
+cgo:Person rdf:type owl:Class ;
+           rdfs:comment "A single real person." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Platform
+cgo:Platform rdf:type owl:Class ;
+             rdfs:subClassOf cgo:Hardware ;
+             rdfs:comment "A game may be available platforms." ,
+                          "A platform on which the game may be played." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Producer
+cgo:Producer rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( cgo:Company
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty cgo:isProducerOf ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass cgo:Game
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf cgo:Company ;
+             rdfs:comment "A company that produces (pays for the development of) games." ;
+             rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Publisher
+cgo:Publisher rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( cgo:Company
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty cgo:isPublisherOf ;
+                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass cgo:Game
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf cgo:Company ;
+              rdfs:comment "A company that publishes (prepares to sell) games." ;
+              rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Puzzle
+cgo:Puzzle rdf:type owl:Class ;
+           rdfs:subClassOf cgo:Genre ;
+           rdfs:comment "e.g. mystery solving, quizzes, puzzles" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RPG
+cgo:RPG rdf:type owl:Class ;
+        rdfs:subClassOf cgo:Genre ;
+        rdfs:comment "e.g. massive multiplayer online role playing games, roguelikes" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Racing
+cgo:Racing rdf:type owl:Class ;
+           rdfs:subClassOf cgo:Genre ;
+           rdfs:comment "Note that Fighting Games may or may not be Sport Games." ;
+           rdfs:seeAlso cgo:Sport ,
+                        "e.g. car racing, plane racing, fantasy racing" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Rating
+cgo:Rating rdf:type owl:Class ;
+           rdfs:comment "A rating that the game may have." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RatingSystem
+cgo:RatingSystem rdf:type owl:Class ;
+                 rdfs:comment "A rating system (usually related to a country/set of countries) that defines particulart ratings." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RealTime
+cgo:RealTime rdf:type owl:Class ;
+             rdfs:subClassOf cgo:Strategy ;
+             rdfs:comment "Describes Games that have a gameplay in real time (i.e. not turn based)." ;
+             rdfs:seeAlso cgo:TurnBased .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Resource
+cgo:Resource rdf:type owl:Class ;
+             rdfs:comment "A resource or database with information about a game." ,
+                          "e.g. internet forum, website, encyclopedia." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Review
+cgo:Review rdf:type owl:Class ;
+           rdfs:comment "A Review of a Game." ,
+                        "There is no class nor proeprty that maps a review to a particular numeric value, because various sources may have different scales with different precisions and comparing them may be hard." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#SimpleLore
+cgo:SimpleLore rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( cgo:Lore
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty cgo:hasArtPiece ;
+                                                            owl:maxQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass cgo:ArtPiece
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf cgo:Lore ;
+               rdfs:comment "A subjective definition of lore that is simple." ,
+                            "An SimpleLore has maximum 4 related ArtPieces." ;
+               rdfs:seeAlso cgo:AdvancedLore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Simulation
+cgo:Simulation rdf:type owl:Class ;
+               rdfs:subClassOf cgo:Genre ;
+               rdfs:comment "e.g. driving simulations, farming simulations" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#SizeClassification
+cgo:SizeClassification rdf:type owl:Class ;
+                       rdfs:comment "The classification of game size." ,
+                                    "e.g.: AAA, AAA+, indie" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#SocialMediaChannel
+cgo:SocialMediaChannel rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( cgo:ArtPiece
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty cgo:hasInfuencer ;
+                                                                    owl:someValuesFrom cgo:Influencer
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf cgo:ArtPiece ;
+                       rdfs:comment "A portal for conveying information to massive audiences (usually via the Internet)." ,
+                                    "e.g. Twitch, YouTube, Instagram, Facebook" ;
+                       rdfs:seeAlso cgo:ArtPiece .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Software
+cgo:Software rdf:type owl:Class ;
+             rdfs:comment "A computer programs." ;
+             rdfs:seeAlso cgo:Game ,
+                          "A Game is not a software." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#SoundCard
+cgo:SoundCard rdf:type owl:Class ;
+              rdfs:subClassOf cgo:Hardware ;
+              rdfs:comment "A sound card used in a computer." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Sport
+cgo:Sport rdf:type owl:Class ;
+          rdfs:subClassOf cgo:Genre ;
+          rdfs:comment "e.g. football, soccer, basketball" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Strategy
+cgo:Strategy rdf:type owl:Class ;
+             rdfs:subClassOf cgo:Genre ;
+             rdfs:comment "e.g. card games, real time strategies" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#SubCompany
+cgo:SubCompany rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( cgo:Company
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty cgo:isSubCompanyOf ;
+                                                            owl:someValuesFrom cgo:Company
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf cgo:Company ;
+               rdfs:comment "A company belonging to another company." ;
+               rdfs:seeAlso cgo:Company .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Text
+cgo:Text rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( cgo:ArtPiece
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty cgo:hasWriter ;
+                                                      owl:someValuesFrom cgo:Writer
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf cgo:ArtPiece ;
+         rdfs:comment "A text." ,
+                      "e.g. a book or a poem" ;
+         rdfs:seeAlso cgo:ArtPiece .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ThirdPerson
+cgo:ThirdPerson rdf:type owl:Class ;
+                rdfs:subClassOf cgo:Genre ;
+                rdfs:comment "Describes Games which are played from the third person perspective." ,
+                             "e.g. third person shooter" ;
+                rdfs:seeAlso cgo:FirstPerson .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#TimeSpan
+cgo:TimeSpan rdf:type owl:Class ;
+             rdfs:comment "A subjective name given to a real time period when a game was created." ,
+                          "The class does not define time precisely (e.g. it can be \"the 90s\" which may mean 1990-2000, but may also include 2001)." ,
+                          "Time spans may overalap." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Tournament
+cgo:Tournament rdf:type owl:Class ;
+               rdfs:subClassOf cgo:Event ;
+               rdfs:comment "A tournament, championship or any event where the competition is about playing a Game." ;
+               rdfs:seeAlso cgo:Game .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#TurnBased
+cgo:TurnBased rdf:type owl:Class ;
+              rdfs:subClassOf cgo:Strategy ;
+              rdfs:comment "Describes all games that have a gameplay based on turns (i.e. not real time)." ;
+              rdfs:seeAlso cgo:RealTime .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Unix
+cgo:Unix rdf:type owl:Class ;
+         rdfs:subClassOf cgo:ComputerOperatingSystem ;
+         rdfs:comment "A distribution of Unix-like Operating System (any of the UNIX distributions)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#VideoCard
+cgo:VideoCard rdf:type owl:Class ;
+              rdfs:subClassOf cgo:Hardware ;
+              rdfs:comment "A video card used in a computer." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#VideoDevice
+cgo:VideoDevice rdf:type owl:Class ;
+                rdfs:subClassOf cgo:InputDevice ,
+                                cgo:OutputDevice ;
+                rdfs:comment "A device outputing video." ,
+                             "E.g. monitor, TV screen." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#VideoGame
+cgo:VideoGame rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows
+cgo:Windows rdf:type owl:Class ;
+            rdfs:subClassOf cgo:ComputerOperatingSystem ;
+            rdfs:comment "A distribution of Microsoft Windows Operating System (Windows OS)." .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Writer
+cgo:Writer rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( cgo:Person
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty cgo:isWriterOf ;
+                                                        owl:someValuesFrom cgo:Text
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf cgo:Person ;
+           rdfs:comment cgo:Person ,
+                        "A person that writes texts." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Android2.2
+cgo:Android2.2 rdf:type owl:NamedIndividual ,
+                        cgo:Android ;
+               cgo:hasName cgo:Android_Froyo .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Android_Froyo
+cgo:Android_Froyo rdf:type owl:NamedIndividual ,
+                           cgo:Name ;
+                  rdfs:label "Android Froyo" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#BattleForMiddleEarth
+cgo:BattleForMiddleEarth rdf:type owl:NamedIndividual ,
+                                  cgo:GameSeries ;
+                         cgo:hasName cgo:John_Ronald_Reuel_Tolkien ;
+                         cgo:isAuthorOf cgo:LordOfTheRingTheFellowshipOfTheRing .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#BattleForMiddleEarthI
+cgo:BattleForMiddleEarthI rdf:type owl:NamedIndividual ,
+                                   cgo:ComputerGame ;
+                          cgo:hasDeveloper cgo:EA ;
+                          cgo:hasGameSeries cgo:BattleForMiddleEarth ;
+                          cgo:hasLanguage cgo:English ;
+                          cgo:hasLore cgo:LordOfTheRingsLore ;
+                          cgo:hasResource cgo:ModDb .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#BattleForMiddleEarthII
+cgo:BattleForMiddleEarthII rdf:type owl:NamedIndividual ,
+                                    cgo:ComputerGame ;
+                           cgo:hasActionTime cgo:LotrThirdAge ;
+                           cgo:hasDeveloper cgo:EA ;
+                           cgo:hasGameSeries cgo:BattleForMiddleEarth ;
+                           cgo:hasLanguage cgo:English ;
+                           cgo:hasLore cgo:LordOfTheRingsLore ;
+                           cgo:hasMod cgo:Bfme2:HdEdition ;
+                           cgo:hasResource cgo:ModDb ;
+                           cgo:requires cgo:PentiumIII .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#CandyCrushSaga
+cgo:CandyCrushSaga rdf:type owl:NamedIndividual ,
+                            cgo:MobileGame ;
+                   cgo:hasGenre cgo:TileMatching ;
+                   cgo:hasName cgo:Candy_Crush_Saga ;
+                   cgo:requires cgo:Android2.2 ,
+                                cgo:IOS4.3 ;
+                   cgo:hasMinimumAge "3"^^xsd:unsignedShort .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Candy_Crush_Saga
+cgo:Candy_Crush_Saga rdf:type owl:NamedIndividual ,
+                              cgo:Name ;
+                     rdfs:label "Candy Crush Saga" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#China
+cgo:China rdf:type owl:NamedIndividual ,
+                   cgo:Country .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ChrissyCostanza
+cgo:ChrissyCostanza rdf:type owl:NamedIndividual ,
+                             cgo:Musician .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Chrissy_Costanza
+cgo:Chrissy_Costanza rdf:type owl:NamedIndividual ,
+                              cgo:Name ;
+                     cgo:hasName cgo:Chrissy_Costanza ;
+                     rdfs:label "Chrissy Costanza" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#EA
+cgo:EA rdf:type owl:NamedIndividual ,
+                cgo:Developer ;
+       cgo:hasName cgo:Electronic_Arts .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Electronic_Arts
+cgo:Electronic_Arts rdf:type owl:NamedIndividual ,
+                             cgo:Name ;
+                    rdfs:label "Electronic Arts" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#English
+cgo:English rdf:type owl:NamedIndividual ,
+                     cgo:Language .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Esrb
+cgo:Esrb rdf:type owl:NamedIndividual ,
+                  cgo:RatingSystem .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Freemium
+cgo:Freemium rdf:type owl:NamedIndividual ,
+                      cgo:PaymentModel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#IOS4.3
+cgo:IOS4.3 rdf:type owl:NamedIndividual ,
+                    cgo:IOS .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Imaqtpie
+cgo:Imaqtpie rdf:type owl:NamedIndividual ,
+                      cgo:Influencer ;
+             cgo:hasName cgo:Michael_Santana .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Jankos
+cgo:Jankos rdf:type owl:NamedIndividual ,
+                    cgo:Esporter ;
+           cgo:isEsporterOf cgo:Worlds2019 .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#John_Ronald_Reuel_Tolkien
+cgo:John_Ronald_Reuel_Tolkien rdf:type owl:NamedIndividual ,
+                                       cgo:Name ;
+                              rdfs:label "John Ronald Reuel Tolkien" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#JrrTolkien
+cgo:JrrTolkien rdf:type owl:NamedIndividual ,
+                        cgo:Writer .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LeagueOfLegends
+cgo:LeagueOfLegends rdf:type owl:NamedIndividual ,
+                             cgo:ComputerGame ;
+                    cgo:hasEsporter cgo:Jankos ;
+                    cgo:hasGenre cgo:Moba ;
+                    cgo:hasLanguage cgo:English ;
+                    cgo:hasLore cgo:LeagueOfLegendsLore ;
+                    cgo:hasName cgo:League_Of_Legends ;
+                    cgo:hasPaymentModel cgo:Freemium ,
+                                        cgo:Microtransaction ;
+                    cgo:hasRating cgo:T ;
+                    cgo:hasReview cgo:Mmos.comHuyLuong ;
+                    cgo:hasSizeClassification <http://www.semanticweb.org/jansawicki/ontologies/cgo#AAA+> ;
+                    cgo:isRelatedTo cgo:LegendsNeverDie ;
+                    cgo:requires cgo:NvidiaGeForce8800 ,
+                                 cgo:Windows10 ,
+                                 cgo:Windows7 ;
+                    cgo:requiresController "false"^^xsd:boolean ;
+                    cgo:requiresInternet "true"^^xsd:boolean ;
+                    cgo:requiresKeyboard "true"^^xsd:boolean ;
+                    cgo:requiresMouse "true"^^xsd:boolean ;
+                    cgo:requiresRam "2"^^xsd:unsignedShort ;
+                    cgo:requiresVideoRam "512"^^xsd:unsignedShort .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LeagueOfLegendsLore
+cgo:LeagueOfLegendsLore rdf:type owl:NamedIndividual ,
+                                 cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#League_Of_Legends
+cgo:League_Of_Legends rdf:type owl:NamedIndividual ,
+                               cgo:Name ;
+                      rdfs:label "League of Legends" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LegendsNeverDie
+cgo:LegendsNeverDie rdf:type owl:NamedIndividual ,
+                             cgo:Music ;
+                    cgo:hasMusician cgo:ChrissyCostanza .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LordOfTheRingTheFellowshipOfTheRing
+cgo:LordOfTheRingTheFellowshipOfTheRing rdf:type owl:NamedIndividual ,
+                                                 cgo:Text ;
+                                        cgo:hasName cgo:The_Lord_Of_The_Rings:_The_Fellowship_of_the_Ring .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LordOfTheRingsLore
+cgo:LordOfTheRingsLore rdf:type owl:NamedIndividual ,
+                                cgo:Lore .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LordOfTheRingsTheFellowshipOfTheRingMovie
+cgo:LordOfTheRingsTheFellowshipOfTheRingMovie rdf:type owl:NamedIndividual ,
+                                                       cgo:Movie ;
+                                              cgo:hasName cgo:LordOfTheRingTheFellowshipOfTheRing .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#LotrThirdAge
+cgo:LotrThirdAge rdf:type owl:NamedIndividual ,
+                          cgo:ActionTime .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Marcin_Jankowski
+cgo:Marcin_Jankowski rdf:type owl:NamedIndividual ,
+                              cgo:Name ;
+                     cgo:hasName cgo:Marcin_Jankowski ;
+                     rdfs:label "Marcin Jankowski" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Michael_Santana
+cgo:Michael_Santana rdf:type owl:NamedIndividual ,
+                             cgo:Name ;
+                    rdfs:label "Michael Santana" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Microtransaction
+cgo:Microtransaction rdf:type owl:NamedIndividual ,
+                              cgo:PaymentModel .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Mmos.comHuyLuong
+cgo:Mmos.comHuyLuong rdf:type owl:NamedIndividual ,
+                              cgo:Review ;
+                     cgo:hasReviewAbstract "\"League of Legends is the most played PC game in the world for a reason. It's definitely worth a try. Play it with friends, you’ll have more fun. Whether it be casual or competitive, there's something for everyone. Those new to the genre shouldn't be too intimidated, either. League is much more newbie-friendly than other MOBAs.\""^^xsd:string ;
+                     cgo:hasReviewSource "https://mmos.com/review/league-of-legends"^^xsd:anyURI .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Moba
+cgo:Moba rdf:type owl:NamedIndividual ,
+                  cgo:Strategy .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#ModDb
+cgo:ModDb rdf:type owl:NamedIndividual ,
+                   cgo:Resource ;
+          cgo:hasAddress "https://www.moddb.com/"^^xsd:anyURI .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#NvidiaGeForce8800
+cgo:NvidiaGeForce8800 rdf:type owl:NamedIndividual ,
+                               cgo:CPU .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#PentiumIII
+cgo:PentiumIII rdf:type owl:NamedIndividual ,
+                        cgo:CPU .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Real-time_Strategy
+cgo:Real-time_Strategy rdf:type owl:NamedIndividual ,
+                                cgo:Name ;
+                       cgo:hasAbbreviation cgo:RtsAbbreviation ;
+                       rdfs:label "Real-time Strategy" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Riot
+cgo:Riot rdf:type owl:NamedIndividual ,
+                  cgo:Developer ;
+         cgo:hasName cgo:Riot_Games ;
+         cgo:isSubCompanyOf cgo:Tencent .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Riot_Games
+cgo:Riot_Games rdf:type owl:NamedIndividual ,
+                        cgo:Name ;
+               rdfs:label "Riot Games" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RtsAbbreviation
+cgo:RtsAbbreviation rdf:type owl:NamedIndividual ,
+                             cgo:Abbreviation ;
+                    rdfs:label "RTS" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#RtsGenre
+cgo:RtsGenre rdf:type owl:NamedIndividual ,
+                      cgo:RealTime ;
+             cgo:hasName cgo:Real-time_Strategy .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#T
+cgo:T rdf:type owl:NamedIndividual ,
+               cgo:Rating ;
+      cgo:hasRatingSystem cgo:Esrb .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Tencent
+cgo:Tencent rdf:type owl:NamedIndividual ,
+                     cgo:Company ;
+            cgo:hasCountry cgo:China .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#TileMatching
+cgo:TileMatching rdf:type owl:NamedIndividual ,
+                          cgo:Puzzle .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows10
+cgo:Windows10 rdf:type owl:NamedIndividual ,
+                       cgo:Windows .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Windows7
+cgo:Windows7 rdf:type owl:NamedIndividual ,
+                      cgo:Windows .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Worlds2019
+cgo:Worlds2019 rdf:type owl:NamedIndividual ,
+                        cgo:Tournament ;
+               cgo:isEsporterOf cgo:Worlds2019 .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#AAA+
+<http://www.semanticweb.org/jansawicki/ontologies/cgo#AAA+> rdf:type owl:NamedIndividual ,
+                                                                     cgo:SizeClassification .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Battle_for_Middle_Earth_2:_HD_Edition
+cgo:Battle_for_Middle_Earth_2:_HD_Edition rdf:type owl:NamedIndividual ,
+                                                   cgo:Name ;
+                                          rdfs:label "Battle for Middle Earth 2: HD Edition" .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#Bfme2:HdEdition
+cgo:Bfme2:HdEdition rdf:type owl:NamedIndividual ,
+                             cgo:Mod ;
+                    cgo:hasName cgo:Battle_for_Middle_Earth_2:_HD_Edition .
+
+
+###  http://www.semanticweb.org/jansawicki/ontologies/cgo#The_Lord_Of_The_Rings:_The_Fellowship_of_the_Ring
+cgo:The_Lord_Of_The_Rings:_The_Fellowship_of_the_Ring rdf:type owl:NamedIndividual ,
+                                                               cgo:Name ;
+                                                      rdfs:label "The Lord Of The Rings: The Fellowship Of The Ring." .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( cgo:Macintosh
+                cgo:Unix
+                cgo:Windows
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers rdf:nil
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

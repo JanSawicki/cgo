@@ -1841,7 +1841,6 @@ This logic is different for ComputerGame and MobileGame.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Convention">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Event"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Tournament"/>
         <rdfs:comment>A convention related to a Game.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Game"/>
     </owl:Class>
