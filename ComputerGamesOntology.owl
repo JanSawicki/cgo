@@ -1785,7 +1785,6 @@ The object property &quot;requires&quot; links a Game to a particular type of So
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Person"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Esporter"/>
         <rdfs:comment>An author of something.</rdfs:comment>
     </owl:Class>
     
@@ -2767,22 +2766,6 @@ This logic is different for ConsoleGame.</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Director"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Actor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Influencer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jansawicki/ontologies/cgo#Writer"/>
-        </owl:members>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
