@@ -1168,11 +1168,6 @@ cgo:wasRealeased rdf:type owl:DatatypeProperty ;
                                           owl:equivalentClass cgo:Music .
 
 
-###  http://dbpedia.org/ontology/Name
-<http://dbpedia.org/ontology/Name> rdf:type owl:Class ;
-                                   owl:equivalentClass cgo:Name .
-
-
 ###  http://dbpedia.org/ontology/Person
 <http://dbpedia.org/ontology/Person> rdf:type owl:Class ;
                                      owl:equivalentClass cgo:Person .

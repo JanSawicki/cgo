@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/jansawicki/ontologies/cgo"
      xml:base="http://www.semanticweb.org/jansawicki/ontologies/cgo"
-     xmlns:dc="http://purl.org/dc/terms#"
-	 xmlns:cgo="http://www.semanticweb.org/jansawicki/ontologies/cgo#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cgo="http://www.semanticweb.org/jansawicki/ontologies/cgo#"
      xmlns:dbo="http://dbpedia.org/resource/classes#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1596,14 +1596,6 @@ E.g.: an 3-year-old child will not understand how to play a intense strategy bas
     
 
 
-    <!-- http://dbpedia.org/ontology/Name -->
-
-    <owl:Class rdf:about="http://dbpedia.org/ontology/Name">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Name"/>
-    </owl:Class>
-    
-
-
     <!-- http://dbpedia.org/ontology/Person -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Person">
@@ -3174,10 +3166,10 @@ This logic is different for ConsoleGame.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/jansawicki/ontologies/cgo#Name"/>
         <rdfs:label>The Lord Of The Rings: The Fellowship Of The Ring.</rdfs:label>
     </owl:NamedIndividual>
-	
-	
-	
-	<!-- 
+    
+
+
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // General axioms
